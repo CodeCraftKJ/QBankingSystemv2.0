@@ -1,5 +1,5 @@
 ﻿using QBankingSystemv2._0.Forms;
-using System.Threading;
+using System;
 using System.Windows.Forms;
 
 namespace QBankingSystemv2._0
@@ -9,14 +9,22 @@ namespace QBankingSystemv2._0
         public StartFrom()
         {
             InitializeComponent();
-            Thread thread = new Thread(OpenWelcomeForm);
-            thread.Start();
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(StartForm_KeyPress);
+        }
+
+        private void StartForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) // Sprawdza, czy wciśnięty klawisz to Enter
+            {
+                OpenWelcomeForm();
+            }
         }
 
         private void OpenWelcomeForm()
         {
-            Thread.Sleep(10000);
             WelcomeForm welcomeForm = new WelcomeForm();
+            welcomeForm.Activated += (sender, e) => this.Hide();
             welcomeForm.ShowDialog();
         }
     }
