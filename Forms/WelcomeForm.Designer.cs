@@ -62,7 +62,6 @@ namespace QBankingSystemv2._0.Forms
             this.pictureBoxWelcome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxWelcome.TabIndex = 0;
             this.pictureBoxWelcome.TabStop = false;
-            this.pictureBoxWelcome.Click += new System.EventHandler(this.pictureBoxWelcome_Click);
             // 
             // pictureBox1
             // 
@@ -74,7 +73,6 @@ namespace QBankingSystemv2._0.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -95,7 +93,6 @@ namespace QBankingSystemv2._0.Forms
             this.groupBox1.Size = new System.Drawing.Size(631, 499);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox4
             // 
@@ -131,7 +128,6 @@ namespace QBankingSystemv2._0.Forms
             this.label3.Size = new System.Drawing.Size(301, 69);
             this.label3.TabIndex = 4;
             this.label3.Text = "Welcome to";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label6
             // 
@@ -232,7 +228,6 @@ namespace QBankingSystemv2._0.Forms
             this.button2.TabIndex = 1;
             this.button2.Text = "LOG IN";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox2
             // 
@@ -258,7 +253,6 @@ namespace QBankingSystemv2._0.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QPayApp";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.QPayApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWelcome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
