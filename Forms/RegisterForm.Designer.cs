@@ -35,29 +35,29 @@ namespace QBankingSystemv2._0.Forms
             this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textRepeatPassword = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textMatrialStatus = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textAddress = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBirth = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textPIN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textpesel = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textphone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textlastname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textfirstname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textusername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,29 +85,29 @@ namespace QBankingSystemv2._0.Forms
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.textRepeatPassword);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.textBoxPassword);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.textMatrialStatus);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.textAddress);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.textBirth);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.textEmail);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textPIN);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textpesel);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textphone);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textlastname);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textfirstname);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textusername);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
@@ -132,7 +132,6 @@ namespace QBankingSystemv2._0.Forms
             this.button1.TabIndex = 38;
             this.button1.Text = "SIGN IN";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label15
             // 
@@ -156,12 +155,12 @@ namespace QBankingSystemv2._0.Forms
             this.pictureBox3.TabIndex = 36;
             this.pictureBox3.TabStop = false;
             // 
-            // textBox7
+            // textRepeatPassword
             // 
-            this.textBox7.Location = new System.Drawing.Point(270, 506);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(186, 27);
-            this.textBox7.TabIndex = 35;
+            this.textRepeatPassword.Location = new System.Drawing.Point(270, 506);
+            this.textRepeatPassword.Name = "textRepeatPassword";
+            this.textRepeatPassword.Size = new System.Drawing.Size(186, 27);
+            this.textRepeatPassword.TabIndex = 35;
             // 
             // label9
             // 
@@ -177,13 +176,15 @@ namespace QBankingSystemv2._0.Forms
             this.label9.Size = new System.Drawing.Size(141, 23);
             this.label9.TabIndex = 34;
             this.label9.Text = "Repeat Password";
+            this.label9.Click += new System.EventHandler(this.RepeatePasswordTextChanged);
             // 
-            // textBox8
+            // textBoxPassword
             // 
-            this.textBox8.Location = new System.Drawing.Point(270, 431);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(186, 27);
-            this.textBox8.TabIndex = 33;
+            this.textBoxPassword.Location = new System.Drawing.Point(270, 431);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(186, 27);
+            this.textBoxPassword.TabIndex = 33;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.PasswordTextChanged);
             // 
             // label10
             // 
@@ -200,12 +201,13 @@ namespace QBankingSystemv2._0.Forms
             this.label10.TabIndex = 32;
             this.label10.Text = "Password";
             // 
-            // textBox9
+            // textMatrialStatus
             // 
-            this.textBox9.Location = new System.Drawing.Point(270, 358);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(186, 27);
-            this.textBox9.TabIndex = 31;
+            this.textMatrialStatus.Location = new System.Drawing.Point(270, 358);
+            this.textMatrialStatus.Name = "textMatrialStatus";
+            this.textMatrialStatus.Size = new System.Drawing.Size(186, 27);
+            this.textMatrialStatus.TabIndex = 31;
+            this.textMatrialStatus.TextChanged += new System.EventHandler(this.MatrialStatusTextChanged);
             // 
             // label11
             // 
@@ -222,12 +224,13 @@ namespace QBankingSystemv2._0.Forms
             this.label11.TabIndex = 30;
             this.label11.Text = "Marital Status";
             // 
-            // textBox10
+            // textAddress
             // 
-            this.textBox10.Location = new System.Drawing.Point(270, 289);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(186, 27);
-            this.textBox10.TabIndex = 29;
+            this.textAddress.Location = new System.Drawing.Point(270, 289);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(186, 27);
+            this.textAddress.TabIndex = 29;
+            this.textAddress.TextChanged += new System.EventHandler(this.AdressTextChanged);
             // 
             // label12
             // 
@@ -244,12 +247,13 @@ namespace QBankingSystemv2._0.Forms
             this.label12.TabIndex = 28;
             this.label12.Text = "Address";
             // 
-            // textBox11
+            // textBirth
             // 
-            this.textBox11.Location = new System.Drawing.Point(270, 221);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(186, 27);
-            this.textBox11.TabIndex = 27;
+            this.textBirth.Location = new System.Drawing.Point(270, 221);
+            this.textBirth.Name = "textBirth";
+            this.textBirth.Size = new System.Drawing.Size(186, 27);
+            this.textBirth.TabIndex = 27;
+            this.textBirth.TextChanged += new System.EventHandler(this.dateOfBirthTextChanged);
             // 
             // label13
             // 
@@ -266,13 +270,13 @@ namespace QBankingSystemv2._0.Forms
             this.label13.TabIndex = 26;
             this.label13.Text = "Date of Birth";
             // 
-            // textBox12
+            // textEmail
             // 
-            this.textBox12.Location = new System.Drawing.Point(270, 156);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(186, 27);
-            this.textBox12.TabIndex = 25;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.textEmail.Location = new System.Drawing.Point(270, 156);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(186, 27);
+            this.textEmail.TabIndex = 25;
+            this.textEmail.TextChanged += new System.EventHandler(this.emailTextChanged);
             // 
             // label14
             // 
@@ -289,12 +293,13 @@ namespace QBankingSystemv2._0.Forms
             this.label14.TabIndex = 24;
             this.label14.Text = "Email";
             // 
-            // textBox6
+            // textPIN
             // 
-            this.textBox6.Location = new System.Drawing.Point(49, 506);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(186, 27);
-            this.textBox6.TabIndex = 23;
+            this.textPIN.Location = new System.Drawing.Point(49, 506);
+            this.textPIN.Name = "textPIN";
+            this.textPIN.Size = new System.Drawing.Size(186, 27);
+            this.textPIN.TabIndex = 23;
+            this.textPIN.TextChanged += new System.EventHandler(this.pinTextChanged);
             // 
             // label8
             // 
@@ -311,12 +316,13 @@ namespace QBankingSystemv2._0.Forms
             this.label8.TabIndex = 22;
             this.label8.Text = "PIN";
             // 
-            // textBox5
+            // textpesel
             // 
-            this.textBox5.Location = new System.Drawing.Point(49, 431);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(186, 27);
-            this.textBox5.TabIndex = 21;
+            this.textpesel.Location = new System.Drawing.Point(49, 431);
+            this.textpesel.Name = "textpesel";
+            this.textpesel.Size = new System.Drawing.Size(186, 27);
+            this.textpesel.TabIndex = 21;
+            this.textpesel.TextChanged += new System.EventHandler(this.peselTextChanged);
             // 
             // label7
             // 
@@ -333,12 +339,13 @@ namespace QBankingSystemv2._0.Forms
             this.label7.TabIndex = 20;
             this.label7.Text = "PESEL";
             // 
-            // textBox4
+            // textphone
             // 
-            this.textBox4.Location = new System.Drawing.Point(49, 358);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(186, 27);
-            this.textBox4.TabIndex = 19;
+            this.textphone.Location = new System.Drawing.Point(49, 358);
+            this.textphone.Name = "textphone";
+            this.textphone.Size = new System.Drawing.Size(186, 27);
+            this.textphone.TabIndex = 19;
+            this.textphone.TextChanged += new System.EventHandler(this.phoneTextChanged);
             // 
             // label6
             // 
@@ -355,12 +362,13 @@ namespace QBankingSystemv2._0.Forms
             this.label6.TabIndex = 18;
             this.label6.Text = "Phone";
             // 
-            // textBox3
+            // textlastname
             // 
-            this.textBox3.Location = new System.Drawing.Point(49, 289);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(186, 27);
-            this.textBox3.TabIndex = 17;
+            this.textlastname.Location = new System.Drawing.Point(49, 289);
+            this.textlastname.Name = "textlastname";
+            this.textlastname.Size = new System.Drawing.Size(186, 27);
+            this.textlastname.TabIndex = 17;
+            this.textlastname.TextChanged += new System.EventHandler(this.lastnameTextChanged);
             // 
             // label5
             // 
@@ -377,12 +385,13 @@ namespace QBankingSystemv2._0.Forms
             this.label5.TabIndex = 16;
             this.label5.Text = "Last Name";
             // 
-            // textBox2
+            // textfirstname
             // 
-            this.textBox2.Location = new System.Drawing.Point(49, 221);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 27);
-            this.textBox2.TabIndex = 15;
+            this.textfirstname.Location = new System.Drawing.Point(49, 221);
+            this.textfirstname.Name = "textfirstname";
+            this.textfirstname.Size = new System.Drawing.Size(186, 27);
+            this.textfirstname.TabIndex = 15;
+            this.textfirstname.TextChanged += new System.EventHandler(this.firstnameTextChanged);
             // 
             // label2
             // 
@@ -399,13 +408,13 @@ namespace QBankingSystemv2._0.Forms
             this.label2.TabIndex = 14;
             this.label2.Text = "First Name";
             // 
-            // textBox1
+            // textusername
             // 
-            this.textBox1.Location = new System.Drawing.Point(49, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 27);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textusername.Location = new System.Drawing.Point(49, 156);
+            this.textusername.Name = "textusername";
+            this.textusername.Size = new System.Drawing.Size(186, 27);
+            this.textusername.TabIndex = 13;
+            this.textusername.TextChanged += new System.EventHandler(this.usernameTextChanged);
             // 
             // label1
             // 
@@ -489,30 +498,30 @@ namespace QBankingSystemv2._0.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textPIN;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textpesel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textphone;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textlastname;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textfirstname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textusername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textRepeatPassword;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textMatrialStatus;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textAddress;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBirth;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;
