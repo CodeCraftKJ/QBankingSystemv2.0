@@ -6,13 +6,19 @@ namespace QBankingSystemv2._0.ValidationClasses
 {
     public class LastnameValidator : AbstractValidator<string>
     {
+        private static ToolTip toolTip = new ToolTip();
+
         public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {
             string value = textBox.Text;
             var result = Validate(value);
             if (!result.IsValid)
             {
-                MessageBox.Show(result.Errors[0].ErrorMessage);
+                toolTip.Show(result.Errors[0].ErrorMessage, textBox, textBox.Width, 0);
+            }
+            else
+            {
+                toolTip.Hide(textBox);
             }
             return result;
         }
@@ -20,8 +26,10 @@ namespace QBankingSystemv2._0.ValidationClasses
         public LastnameValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Lastname cannot be empty.");
-                // Dodaj więcej reguł walidacji według potrzeb
+                .NotEmpty().WithMessage("Lastname cannot be empty.")
+                .Matches(@"^[A-ZŻŹĆĄŚĘŁÓŃ][a-zżźćńółęąś]+$")
+                .WithMessage("Invalid lastname format. Lastname should start with a capital letter and consist of lowercase letters.");
         }
+
     }
 }

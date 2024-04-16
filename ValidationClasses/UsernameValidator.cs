@@ -6,6 +6,8 @@ namespace QBankingSystemv2._0.ValidationClasses
 {
     public class UsernameValidator : AbstractValidator<string>
     {
+        private static ToolTip toolTip = new ToolTip();
+
         public ValidationResult ValidateUsername(string username)
         {
             var validator = new UsernameValidator();
@@ -18,17 +20,22 @@ namespace QBankingSystemv2._0.ValidationClasses
             var result = ValidateUsername(username);
             if (!result.IsValid)
             {
-                MessageBox.Show(result.Errors[0].ErrorMessage);
+                toolTip.Show(result.Errors[0].ErrorMessage, textBox, textBox.Width, 0);
+            }
+            else
+            {
+                toolTip.Hide(textBox);
             }
             return result;
         }
-
         public UsernameValidator()
         {
             RuleFor(username => username)
                 .NotEmpty().WithMessage("Username cannot be empty.")
+                .Matches(@"^[a-zA-Z0-9_]+$").WithMessage("Username can only contain letters, numbers, and underscores.")
                 .MinimumLength(4).WithMessage("Username must be at least 4 characters long.")
                 .MaximumLength(20).WithMessage("Username cannot exceed 20 characters.");
         }
+
     }
 }

@@ -4,16 +4,21 @@ using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.ValidationClasses
 {
-    internal class FirstnameValidator : AbstractValidator<string>
+    public class FirstnameValidator : AbstractValidator<string>
     {
+        private static ToolTip toolTip = new ToolTip();
+
         public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {
             string value = textBox.Text;
-            var validator = new FirstnameValidator();
-            var result = validator.Validate(value);
+            var result = Validate(value);
             if (!result.IsValid)
             {
-                MessageBox.Show(result.Errors[0].ErrorMessage);
+                toolTip.Show(result.Errors[0].ErrorMessage, textBox, textBox.Width, 0);
+            }
+            else
+            {
+                toolTip.Hide(textBox);
             }
             return result;
         }
@@ -21,8 +26,10 @@ namespace QBankingSystemv2._0.ValidationClasses
         public FirstnameValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Firstname cannot be empty.");
-                // Dodaj więcej reguł walidacji według potrzeb
+                .NotEmpty().WithMessage("Firstname cannot be empty.")
+                .Matches(@"^[A-ZŻŹĆĄŚĘŁÓŃ][a-zżźćńółęąś]+$")
+                .WithMessage("Invalid firstname format. Firstname should start with a capital letter and consist of lowercase letters.");
         }
+
     }
 }

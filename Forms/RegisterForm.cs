@@ -11,49 +11,49 @@ namespace QBankingSystemv2._0.Forms
             InitializeComponent();
         }
 
-        private void usernameTextChanged(object sender, EventArgs e)
+        private void UsernameTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new UsernameValidator().ValidateAndShowMessage(textBox);
         }
 
-        private void firstnameTextChanged(object sender, EventArgs e)
+        private void FirstnameTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new FirstnameValidator().ValidateAndShowMessage(textBox);
         }
 
-        private void lastnameTextChanged(object sender, EventArgs e)
+        private void LastnameTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new LastnameValidator().ValidateAndShowMessage(textBox);
         }
 
-        private void phoneTextChanged(object sender, EventArgs e)
+        private void PhoneTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new PhoneValidator().ValidateAndShowMessage(textBox);
         }
 
-        private void peselTextChanged(object sender, EventArgs e)
+        private void PeselTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new PeselValidator().ValidateAndShowMessage(textBox);
         }
 
-        private void pinTextChanged(object sender, EventArgs e)
+        private void PinTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new PinValidator().ValidateAndShowMessage(textBox);
         }
 
-        private void emailTextChanged(object sender, EventArgs e)
+        private void EmailTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new EmailValidator().ValidateAndShowMessage(textBox);
         }
 
-        private void dateOfBirthTextChanged(object sender, EventArgs e)
+        private void DateOfBirthTextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             new DateOfBirthValidator().ValidateAndShowMessage(textBox);
@@ -83,5 +83,9 @@ namespace QBankingSystemv2._0.Forms
             new RepeatPasswordValidator().ValidateAndShowMessage(textBoxPassword, repeatPasswordTextBox);
         }
 
+        private void RegisterButtonClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

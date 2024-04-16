@@ -6,21 +6,27 @@ namespace QBankingSystemv2._0.ValidationClasses
 {
     public class RepeatPasswordValidator : AbstractValidator<string>
     {
+        private static ToolTip toolTip = new ToolTip();
+
         public ValidationResult ValidateAndShowMessage(TextBox passwordTextBox, TextBox repeatPasswordTextBox)
         {
             string password = passwordTextBox.Text;
             string repeatPassword = repeatPasswordTextBox.Text;
-            
+
             var result = Validate(repeatPassword);
             if (!result.IsValid)
             {
-                MessageBox.Show(result.Errors[0].ErrorMessage);
+                toolTip.Show(result.Errors[0].ErrorMessage, repeatPasswordTextBox, repeatPasswordTextBox.Width, 0);
             }
             else if (password != repeatPassword)
             {
-                MessageBox.Show("Passwords do not match.");
+                toolTip.Show("Passwords do not match.", repeatPasswordTextBox, repeatPasswordTextBox.Width, 0);
                 result.Errors.Clear();
                 result.Errors.Add(new ValidationFailure("", "Passwords do not match."));
+            }
+            else
+            {
+                toolTip.Hide(repeatPasswordTextBox);
             }
 
             return result;
@@ -30,7 +36,7 @@ namespace QBankingSystemv2._0.ValidationClasses
         {
             RuleFor(value => value)
                 .NotEmpty().WithMessage("Repeat password cannot be empty.");
-                // Dodaj więcej reguł walidacji według potrzeb
         }
+
     }
 }

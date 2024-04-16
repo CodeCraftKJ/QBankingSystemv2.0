@@ -132,6 +132,7 @@ namespace QBankingSystemv2._0.Forms
             this.button1.TabIndex = 38;
             this.button1.Text = "SIGN IN";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.RegisterButtonClick);
             // 
             // label15
             // 
@@ -161,6 +162,7 @@ namespace QBankingSystemv2._0.Forms
             this.textRepeatPassword.Name = "textRepeatPassword";
             this.textRepeatPassword.Size = new System.Drawing.Size(186, 27);
             this.textRepeatPassword.TabIndex = 35;
+            this.textRepeatPassword.Click += new System.EventHandler(this.RepeatePasswordTextChanged);
             // 
             // label9
             // 
@@ -176,7 +178,6 @@ namespace QBankingSystemv2._0.Forms
             this.label9.Size = new System.Drawing.Size(141, 23);
             this.label9.TabIndex = 34;
             this.label9.Text = "Repeat Password";
-            this.label9.Click += new System.EventHandler(this.RepeatePasswordTextChanged);
             // 
             // textBoxPassword
             // 
@@ -253,7 +254,7 @@ namespace QBankingSystemv2._0.Forms
             this.textBirth.Name = "textBirth";
             this.textBirth.Size = new System.Drawing.Size(186, 27);
             this.textBirth.TabIndex = 27;
-            this.textBirth.TextChanged += new System.EventHandler(this.dateOfBirthTextChanged);
+            this.textBirth.TextChanged += new System.EventHandler(this.DateOfBirthTextChanged);
             // 
             // label13
             // 
@@ -276,7 +277,7 @@ namespace QBankingSystemv2._0.Forms
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(186, 27);
             this.textEmail.TabIndex = 25;
-            this.textEmail.TextChanged += new System.EventHandler(this.emailTextChanged);
+            this.textEmail.TextChanged += new System.EventHandler(this.EmailTextChanged);
             // 
             // label14
             // 
@@ -299,7 +300,7 @@ namespace QBankingSystemv2._0.Forms
             this.textPIN.Name = "textPIN";
             this.textPIN.Size = new System.Drawing.Size(186, 27);
             this.textPIN.TabIndex = 23;
-            this.textPIN.TextChanged += new System.EventHandler(this.pinTextChanged);
+            this.textPIN.TextChanged += new System.EventHandler(this.PinTextChanged);
             // 
             // label8
             // 
@@ -322,7 +323,7 @@ namespace QBankingSystemv2._0.Forms
             this.textpesel.Name = "textpesel";
             this.textpesel.Size = new System.Drawing.Size(186, 27);
             this.textpesel.TabIndex = 21;
-            this.textpesel.TextChanged += new System.EventHandler(this.peselTextChanged);
+            this.textpesel.TextChanged += new System.EventHandler(this.PeselTextChanged);
             // 
             // label7
             // 
@@ -345,7 +346,7 @@ namespace QBankingSystemv2._0.Forms
             this.textphone.Name = "textphone";
             this.textphone.Size = new System.Drawing.Size(186, 27);
             this.textphone.TabIndex = 19;
-            this.textphone.TextChanged += new System.EventHandler(this.phoneTextChanged);
+            this.textphone.TextChanged += new System.EventHandler(this.PhoneTextChanged);
             // 
             // label6
             // 
@@ -368,7 +369,7 @@ namespace QBankingSystemv2._0.Forms
             this.textlastname.Name = "textlastname";
             this.textlastname.Size = new System.Drawing.Size(186, 27);
             this.textlastname.TabIndex = 17;
-            this.textlastname.TextChanged += new System.EventHandler(this.lastnameTextChanged);
+            this.textlastname.TextChanged += new System.EventHandler(this.LastnameTextChanged);
             // 
             // label5
             // 
@@ -391,7 +392,7 @@ namespace QBankingSystemv2._0.Forms
             this.textfirstname.Name = "textfirstname";
             this.textfirstname.Size = new System.Drawing.Size(186, 27);
             this.textfirstname.TabIndex = 15;
-            this.textfirstname.TextChanged += new System.EventHandler(this.firstnameTextChanged);
+            this.textfirstname.TextChanged += new System.EventHandler(this.FirstnameTextChanged);
             // 
             // label2
             // 
@@ -414,7 +415,7 @@ namespace QBankingSystemv2._0.Forms
             this.textusername.Name = "textusername";
             this.textusername.Size = new System.Drawing.Size(186, 27);
             this.textusername.TabIndex = 13;
-            this.textusername.TextChanged += new System.EventHandler(this.usernameTextChanged);
+            this.textusername.TextChanged += new System.EventHandler(this.UsernameTextChanged);
             // 
             // label1
             // 

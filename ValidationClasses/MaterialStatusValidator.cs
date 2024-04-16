@@ -1,18 +1,25 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.ValidationClasses
 {
     public class MaterialStatusValidator : AbstractValidator<string>
     {
+        private static ToolTip toolTip = new ToolTip();
+
         public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {
             string value = textBox.Text;
             var result = Validate(value);
             if (!result.IsValid)
             {
-                MessageBox.Show(result.Errors[0].ErrorMessage);
+                toolTip.Show(result.Errors[0].ErrorMessage, textBox, textBox.Width, 0);
+            }
+            else
+            {
+                toolTip.Hide(textBox);
             }
             return result;
         }
@@ -20,8 +27,15 @@ namespace QBankingSystemv2._0.ValidationClasses
         public MaterialStatusValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Material status cannot be empty.");
-                // Dodaj więcej reguł walidacji według potrzeb
+                .NotEmpty().WithMessage("Material status cannot be empty.")
+                .Must(BeAValidMaterialStatus).WithMessage("Invalid material status. Available options: Single, Married, Divorced, Widowed, Other");
         }
+
+        private bool BeAValidMaterialStatus(string status)
+        {
+            string pattern = @"^(Single|Married|Divorced|Widowed|Other)$";
+            return Regex.IsMatch(status, pattern);
+        }
+
     }
 }

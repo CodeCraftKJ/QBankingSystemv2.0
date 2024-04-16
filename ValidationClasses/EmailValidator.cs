@@ -1,18 +1,25 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.ValidationClasses
 {
     public class EmailValidator : AbstractValidator<string>
     {
+        private static ToolTip toolTip = new ToolTip();
+
         public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {
             string value = textBox.Text;
             var result = Validate(value);
             if (!result.IsValid)
             {
-                MessageBox.Show(result.Errors[0].ErrorMessage);
+                toolTip.Show(result.Errors[0].ErrorMessage, textBox, textBox.Width, 0);
+            }
+            else
+            {
+                toolTip.Hide(textBox);
             }
             return result;
         }
@@ -21,8 +28,14 @@ namespace QBankingSystemv2._0.ValidationClasses
         {
             RuleFor(value => value)
                 .NotEmpty().WithMessage("Email cannot be empty.")
-                .EmailAddress().WithMessage("Invalid email address format.");
-                // Dodaj więcej reguł walidacji według potrzeb
+                .Must(BeValidEmailFormat).WithMessage("Invalid email address format. Proper Format: example@example.com");
         }
+
+        private bool BeValidEmailFormat(string email)
+        {
+            string pattern = @"^[^\s@]+@[^\s@]+\.[^\s@]+$";
+            return Regex.IsMatch(email, pattern);
+        }
+
     }
 }
