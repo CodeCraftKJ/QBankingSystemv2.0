@@ -38,9 +38,8 @@ namespace QBankingSystemv2._0
                     await connection.OpenAsync();
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine("Error connecting to the database: " + ex.Message);
                     return false;
                 }
                 finally
