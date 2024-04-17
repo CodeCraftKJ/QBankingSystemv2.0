@@ -13,74 +13,62 @@ namespace QBankingSystemv2._0.Forms
 
         private void UsernameTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new UsernameValidator().ValidateAndShowMessage(textBox);
+            new UsernameValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void FirstnameTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new FirstnameValidator().ValidateAndShowMessage(textBox);
+            new FirstnameValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void LastnameTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new LastnameValidator().ValidateAndShowMessage(textBox);
+            new LastnameValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void PhoneTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new PhoneValidator().ValidateAndShowMessage(textBox);
+            new PhoneValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void PeselTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new PeselValidator().ValidateAndShowMessage(textBox);
+            new PeselValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void PinTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new PinValidator().ValidateAndShowMessage(textBox);
+            new PinValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void EmailTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new EmailValidator().ValidateAndShowMessage(textBox);
+            new EmailValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void DateOfBirthTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new DateOfBirthValidator().ValidateAndShowMessage(textBox);
+            new DateOfBirthValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void AdressTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new AddressValidator().ValidateAndShowMessage(textBox);
+            new AddressValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void MatrialStatusTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new MaterialStatusValidator().ValidateAndShowMessage(textBox);
+            new MaterialStatusValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void PasswordTextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            new PasswordValidator().ValidateAndShowMessage(textBox);
+            new PasswordValidator().ValidateAndShowMessage((TextBox)sender);
         }
 
         private void RepeatePasswordTextChanged(object sender, EventArgs e)
         {
-            TextBox repeatPasswordTextBox = (TextBox)sender;
-            new RepeatPasswordValidator().ValidateAndShowMessage(textBoxPassword, repeatPasswordTextBox);
+            new RepeatPasswordValidator().ValidateAndShowMessage(textBoxPassword, (TextBox)sender);
         }
 
         private void RegisterButtonClick(object sender, EventArgs e)

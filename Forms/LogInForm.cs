@@ -3,27 +3,31 @@ using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.Forms
 {
-    public partial class WelcomeForm : Form
+    public partial class LogInForm : Form
     {
-        public WelcomeForm()
+        public LogInForm()
         {
             InitializeComponent();
         }
 
-        private void LogInButtonClick(object sender, EventArgs e)
+        private void textusername_TextChanged(object sender, EventArgs e)
         {
-            LogInForm logInForm = new LogInForm();
-            this.Hide();
-            logInForm.Show();
-            logInForm.FormClosed += (s, args) => this.Close();
+
         }
 
-        private void SignInButtonClick(object sender, EventArgs e)
+        private void logInButtonClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openRegisterForm(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
             this.Hide();
             registerForm.Show();
             registerForm.FormClosed += (s, args) => this.Close();
         }
+
+
     }
 }
