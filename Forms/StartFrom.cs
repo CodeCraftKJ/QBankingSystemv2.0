@@ -1,8 +1,8 @@
 ﻿using QBankingSystemv2._0.Forms;
 using System;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace QBankingSystemv2._0
 {
@@ -14,9 +14,10 @@ namespace QBankingSystemv2._0
             this.Load += new EventHandler(StartForm_Load);
         }
 
-        private void StartForm_Load(object sender, EventArgs e)
+        private async void StartForm_Load(object sender, EventArgs e)
         {
-            if (TryDatabaseConnection())
+
+            if (await TryDatabaseConnectionAsync())
             {
                 OpenWelcomeForm();
             }
@@ -26,28 +27,31 @@ namespace QBankingSystemv2._0
             }
         }
 
-    private bool TryDatabaseConnection()
-    {
-        string connectionString = ConfigurationManager.GetConnectionString();
-
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        private async Task<bool> TryDatabaseConnectionAsync()
         {
-            try
+            string connectionString = ConfigurationManager.GetConnectionString();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error connecting to the database: " + ex.Message);
-                return false;
+                try
+                {
+                    await connection.OpenAsync();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error connecting to the database: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    await connection.CloseAsync();
+                }
             }
         }
-    }
 
 
-
-    private void OpenWelcomeForm()
+        private void OpenWelcomeForm()
         {
             WelcomeForm welcomeForm = new WelcomeForm();
             welcomeForm.Activated += (sender, e) => this.Hide();
@@ -55,3 +59,4 @@ namespace QBankingSystemv2._0
         }
     }
 }
+
