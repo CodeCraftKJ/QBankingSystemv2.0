@@ -1,7 +1,5 @@
 ﻿using QBankingSystemv2._0.Forms;
 using System;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QBankingSystemv2._0
@@ -16,39 +14,15 @@ namespace QBankingSystemv2._0
 
         private async void StartForm_Load(object sender, EventArgs e)
         {
-
-            if (await TryDatabaseConnectionAsync())
+            if (await DatabaseHelper.IsDatabaseReadyAsync())
             {
                 OpenWelcomeForm();
             }
             else
             {
-                MessageBox.Show("Failed to connect to the database. Please check your database connection settings.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The database is not ready. Please check your database connection settings or the structure of the database.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private async Task<bool> TryDatabaseConnectionAsync()
-        {
-            string connectionString = ConfigurationManager.GetConnectionString();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    await connection.OpenAsync();
-                    return true;
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-                finally
-                {
-                    await connection.CloseAsync();
-                }
-            }
-        }
-
 
         private void OpenWelcomeForm()
         {

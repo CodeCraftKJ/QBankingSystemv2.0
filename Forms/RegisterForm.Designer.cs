@@ -32,7 +32,7 @@ namespace QBankingSystemv2._0.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.signInButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textRepeatPassword = new System.Windows.Forms.TextBox();
@@ -49,15 +49,15 @@ namespace QBankingSystemv2._0.Forms
             this.label14 = new System.Windows.Forms.Label();
             this.textPIN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textpesel = new System.Windows.Forms.TextBox();
+            this.textPesel = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textphone = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textlastname = new System.Windows.Forms.TextBox();
+            this.textLastName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textfirstname = new System.Windows.Forms.TextBox();
+            this.textFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textusername = new System.Windows.Forms.TextBox();
+            this.textUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@ namespace QBankingSystemv2._0.Forms
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.signInButton);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.textRepeatPassword);
@@ -99,15 +99,15 @@ namespace QBankingSystemv2._0.Forms
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.textPIN);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textpesel);
+            this.groupBox1.Controls.Add(this.textPesel);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textphone);
+            this.groupBox1.Controls.Add(this.textPhone);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textlastname);
+            this.groupBox1.Controls.Add(this.textLastName);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textfirstname);
+            this.groupBox1.Controls.Add(this.textFirstName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textusername);
+            this.groupBox1.Controls.Add(this.textUserName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
@@ -118,21 +118,21 @@ namespace QBankingSystemv2._0.Forms
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // button1
+            // signInButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.signInButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Azure;
-            this.button1.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button1.Location = new System.Drawing.Point(474, 453);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(452, 80);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "SIGN IN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.RegisterButtonClick);
+            this.signInButton.BackColor = System.Drawing.Color.Azure;
+            this.signInButton.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.signInButton.ForeColor = System.Drawing.Color.ForestGreen;
+            this.signInButton.Location = new System.Drawing.Point(474, 453);
+            this.signInButton.Name = "signInButton";
+            this.signInButton.Size = new System.Drawing.Size(452, 80);
+            this.signInButton.TabIndex = 38;
+            this.signInButton.Text = "SIGN IN";
+            this.signInButton.UseVisualStyleBackColor = false;
+            this.signInButton.Click += new System.EventHandler(this.RegisterButtonClick);
             // 
             // label15
             // 
@@ -319,11 +319,11 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textpesel
             // 
-            this.textpesel.Location = new System.Drawing.Point(49, 431);
-            this.textpesel.Name = "textpesel";
-            this.textpesel.Size = new System.Drawing.Size(186, 27);
-            this.textpesel.TabIndex = 21;
-            this.textpesel.TextChanged += new System.EventHandler(this.PeselTextChanged);
+            this.textPesel.Location = new System.Drawing.Point(49, 431);
+            this.textPesel.Name = "textpesel";
+            this.textPesel.Size = new System.Drawing.Size(186, 27);
+            this.textPesel.TabIndex = 21;
+            this.textPesel.TextChanged += new System.EventHandler(this.PeselTextChanged);
             // 
             // label7
             // 
@@ -342,11 +342,11 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textphone
             // 
-            this.textphone.Location = new System.Drawing.Point(49, 358);
-            this.textphone.Name = "textphone";
-            this.textphone.Size = new System.Drawing.Size(186, 27);
-            this.textphone.TabIndex = 19;
-            this.textphone.TextChanged += new System.EventHandler(this.PhoneTextChanged);
+            this.textPhone.Location = new System.Drawing.Point(49, 358);
+            this.textPhone.Name = "textphone";
+            this.textPhone.Size = new System.Drawing.Size(186, 27);
+            this.textPhone.TabIndex = 19;
+            this.textPhone.TextChanged += new System.EventHandler(this.PhoneTextChanged);
             // 
             // label6
             // 
@@ -365,11 +365,11 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textlastname
             // 
-            this.textlastname.Location = new System.Drawing.Point(49, 289);
-            this.textlastname.Name = "textlastname";
-            this.textlastname.Size = new System.Drawing.Size(186, 27);
-            this.textlastname.TabIndex = 17;
-            this.textlastname.TextChanged += new System.EventHandler(this.LastnameTextChanged);
+            this.textLastName.Location = new System.Drawing.Point(49, 289);
+            this.textLastName.Name = "textlastname";
+            this.textLastName.Size = new System.Drawing.Size(186, 27);
+            this.textLastName.TabIndex = 17;
+            this.textLastName.TextChanged += new System.EventHandler(this.LastnameTextChanged);
             // 
             // label5
             // 
@@ -388,11 +388,11 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textfirstname
             // 
-            this.textfirstname.Location = new System.Drawing.Point(49, 221);
-            this.textfirstname.Name = "textfirstname";
-            this.textfirstname.Size = new System.Drawing.Size(186, 27);
-            this.textfirstname.TabIndex = 15;
-            this.textfirstname.TextChanged += new System.EventHandler(this.FirstnameTextChanged);
+            this.textFirstName.Location = new System.Drawing.Point(49, 221);
+            this.textFirstName.Name = "textfirstname";
+            this.textFirstName.Size = new System.Drawing.Size(186, 27);
+            this.textFirstName.TabIndex = 15;
+            this.textFirstName.TextChanged += new System.EventHandler(this.FirstnameTextChanged);
             // 
             // label2
             // 
@@ -411,11 +411,11 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textusername
             // 
-            this.textusername.Location = new System.Drawing.Point(49, 156);
-            this.textusername.Name = "textusername";
-            this.textusername.Size = new System.Drawing.Size(186, 27);
-            this.textusername.TabIndex = 13;
-            this.textusername.TextChanged += new System.EventHandler(this.UsernameTextChanged);
+            this.textUserName.Location = new System.Drawing.Point(49, 156);
+            this.textUserName.Name = "textusername";
+            this.textUserName.Size = new System.Drawing.Size(186, 27);
+            this.textUserName.TabIndex = 13;
+            this.textUserName.TextChanged += new System.EventHandler(this.UsernameTextChanged);
             // 
             // label1
             // 
@@ -501,15 +501,15 @@ namespace QBankingSystemv2._0.Forms
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textPIN;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textpesel;
+        private System.Windows.Forms.TextBox textPesel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textphone;
+        private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textlastname;
+        private System.Windows.Forms.TextBox textLastName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textfirstname;
+        private System.Windows.Forms.TextBox textFirstName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textusername;
+        private System.Windows.Forms.TextBox textUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textRepeatPassword;
@@ -525,6 +525,6 @@ namespace QBankingSystemv2._0.Forms
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button signInButton;
     }
 }
