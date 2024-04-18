@@ -9,7 +9,7 @@ namespace QBankingSystemv2._0
         public static async Task<bool> IsDatabaseReadyAsync()
         {
             string connectionString = ConfigurationManager.GetConnectionString();
-            string[] requiredTables = { "QPayUsers" };
+            string[] requiredTables = { "QPayUsers", "QPayHarshedPasswords" };
 
             try
             {

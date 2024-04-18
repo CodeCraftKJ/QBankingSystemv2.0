@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QBankingSystemv2._0.Classes.DatabaseManager;
+using QBankingSystemv2._0.ValidationClasses;
+using System;
 using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.Forms
@@ -10,17 +12,7 @@ namespace QBankingSystemv2._0.Forms
             InitializeComponent();
         }
 
-        private void textusername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logInButtonClicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openRegisterForm(object sender, EventArgs e)
+        private void openRegisterAccount(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
             this.Hide();
@@ -28,6 +20,31 @@ namespace QBankingSystemv2._0.Forms
             registerForm.FormClosed += (s, args) => this.Close();
         }
 
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            new PasswordValidator().ValidateAndShowMessage((TextBox)sender);
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            new UsernameValidator().ValidateAndShowMessage((TextBox)sender);
+        }
+
+        private void logInButton_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = RegistrationManager.HashPassword(txtPassword.Text);
+
+            if (LoginManager.ValidateLogin(username, password))
+            {
+                MessageBox.Show("Login successful!");
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.");
+            }
+        }
 
     }
+
 }

@@ -36,12 +36,11 @@ namespace QBankingSystemv2._0
             _textBirth = textBirth;
             _textEmail = textEmail;
 
-            if (!IsValid()) return;
+            if (!IsInputDataValid()) return;
             string errorMessage = RegisterUserInDatabase();
-            if (!string.IsNullOrEmpty(errorMessage))
-            {
-                MessageBox.Show(errorMessage, "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            if (!string.IsNullOrEmpty(errorMessage))MessageBox.Show(errorMessage, "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
         }
     }
 }

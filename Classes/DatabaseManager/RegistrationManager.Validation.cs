@@ -6,7 +6,7 @@ namespace QBankingSystemv2._0
 {
     public static partial class RegistrationManager
     {
-        private static bool IsValid()
+        private static bool IsInputDataValid()
         {
             var validationResults = new List<ValidationResult>();
             validationResults.Add(new PinValidator().ValidateAndShowMessage(_textPIN));
