@@ -16,8 +16,6 @@ namespace QBankingSystemv2._0
         private static TextBox _textAddress;
         private static TextBox _textBirth;
         private static TextBox _textEmail;
-
-
         public static void Initialize(
             TextBox textPIN, TextBox textPesel, TextBox textPhone,
             TextBox textLastName, TextBox textFirstName, TextBox textUserName,
