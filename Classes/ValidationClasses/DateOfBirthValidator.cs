@@ -7,7 +7,7 @@ namespace QBankingSystemv2._0.ValidationClasses
 {
     public class DateOfBirthValidator : AbstractValidator<string>
     {
-        private static ToolTip toolTip = new ToolTip();
+        private static ToolTip toolTip = new();
 
         public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {

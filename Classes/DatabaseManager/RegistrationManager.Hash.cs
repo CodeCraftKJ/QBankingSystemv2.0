@@ -10,7 +10,7 @@ namespace QBankingSystemv2._0
             using (SHA256 sha256 = SHA256.Create())
             {
                 byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
+                StringBuilder builder = new();
                 foreach (byte b in hashedBytes)
                 {
                     builder.Append(b.ToString("x2"));

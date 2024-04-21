@@ -16,7 +16,7 @@ namespace QBankingSystemv2._0
         private static TextBox _textAddress;
         private static TextBox _textBirth;
         private static TextBox _textEmail;
-        public static void Initialize(
+        public static bool InitializeAndRun(
             TextBox textPIN, TextBox textPesel, TextBox textPhone,
             TextBox textLastName, TextBox textFirstName, TextBox textUserName,
             TextBox textRepeatPassword, TextBox textBoxPassword,
@@ -36,11 +36,19 @@ namespace QBankingSystemv2._0
             _textBirth = textBirth;
             _textEmail = textEmail;
 
-            if (!IsInputDataValid()) return;
-            string errorMessage = RegisterUserInDatabase();
-            if (!string.IsNullOrEmpty(errorMessage))MessageBox.Show(errorMessage, "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return Run();
+        }
 
-            
+        private static bool Run()
+        {
+            if (!IsInputDataValid()) return false;
+            string errorMessage = RegisterUserInDatabase();
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                MessageBox.Show(errorMessage, "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
         }
     }
 }

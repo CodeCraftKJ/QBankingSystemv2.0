@@ -38,6 +38,10 @@ namespace QBankingSystemv2._0.Forms
             if (LoginManager.ValidateLogin(username, password))
             {
                 MessageBox.Show("Login successful!");
+                ProfileAccountForm ProfileAccountForm = new ProfileAccountForm();
+                this.Hide();
+                ProfileAccountForm.Show();
+                ProfileAccountForm.FormClosed += (s, args) => this.Close();
             }
             else
             {

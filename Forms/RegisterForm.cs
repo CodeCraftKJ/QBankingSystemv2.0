@@ -73,9 +73,12 @@ namespace QBankingSystemv2._0.Forms
 
         private void RegisterButtonClick(object sender, EventArgs e)
         {
-            RegistrationManager.Initialize(textPIN, textPesel, textPhone, textLastName, textFirstName, textUserName,
+            if (!RegistrationManager.InitializeAndRun(textPIN, textPesel, textPhone, textLastName, textFirstName, textUserName,
                      textRepeatPassword, textBoxPassword, textMatrialStatus, textAddress,
-                     textBirth, textEmail);
+                     textBirth, textEmail))return;
+            WelcomeForm welcomeForm = new();
+            welcomeForm.Activated += (sender, e) => this.Hide();
+            welcomeForm.ShowDialog();
         }
 
     }

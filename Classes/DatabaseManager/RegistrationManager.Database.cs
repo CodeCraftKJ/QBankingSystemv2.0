@@ -9,7 +9,7 @@ namespace QBankingSystemv2._0
         {
             string connectionString = ConfigurationManager.GetConnectionString();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new(connectionString))
             {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
@@ -20,7 +20,7 @@ namespace QBankingSystemv2._0
                     string query = $"INSERT INTO {tableName} (PIN, Pesel, Phone, LastName, FirstName, UserName, MaterialStatus, Address, BirthDate, Email) " +
                                     "VALUES (@PIN, @Pesel, @Phone, @LastName, @FirstName, @UserName, @MaterialStatus, @Address, @BirthDate, @Email); SELECT SCOPE_IDENTITY();";
 
-                    SqlCommand command = new SqlCommand(query, connection, transaction);
+                    SqlCommand command = new(query, connection, transaction);
                     command.Parameters.AddWithValue("@PIN", _textPIN.Text);
                     command.Parameters.AddWithValue("@Pesel", _textPesel.Text);
                     command.Parameters.AddWithValue("@Phone", _textPhone.Text);
@@ -36,7 +36,7 @@ namespace QBankingSystemv2._0
 
                     string hashedPassword = HashPassword(_textBoxPassword.Text);
                     string hashedPasswordQuery = $"INSERT INTO QPayHarshedPasswords (UserId, PasswordHash) VALUES (@UserId, @PasswordHash)";
-                    SqlCommand hashedPasswordCommand = new SqlCommand(hashedPasswordQuery, connection, transaction);
+                    SqlCommand hashedPasswordCommand = new(hashedPasswordQuery, connection, transaction);
                     hashedPasswordCommand.Parameters.AddWithValue("@UserId", userId);
                     hashedPasswordCommand.Parameters.AddWithValue("@PasswordHash", hashedPassword);
 
