@@ -58,9 +58,6 @@ namespace QBankingSystemv2._0.Forms
             // 
             // signInButton
             // 
-            this.signInButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.signInButton.BackColor = System.Drawing.Color.Azure;
             this.signInButton.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.signInButton.ForeColor = System.Drawing.Color.ForestGreen;
@@ -74,7 +71,7 @@ namespace QBankingSystemv2._0.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 71);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(153, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -85,8 +82,9 @@ namespace QBankingSystemv2._0.Forms
             // textUserName
             // 
             this.textUserName.BackColor = System.Drawing.Color.White;
+            this.textUserName.Enabled = false;
             this.textUserName.Font = new System.Drawing.Font("Palatino Linotype", 20.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textUserName.Location = new System.Drawing.Point(171, 71);
+            this.textUserName.Location = new System.Drawing.Point(171, 57);
             this.textUserName.Name = "textUserName";
             this.textUserName.ReadOnly = true;
             this.textUserName.Size = new System.Drawing.Size(794, 53);
@@ -94,13 +92,11 @@ namespace QBankingSystemv2._0.Forms
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 50);
@@ -109,13 +105,10 @@ namespace QBankingSystemv2._0.Forms
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 15.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label2.Location = new System.Drawing.Point(171, 137);
+            this.label2.Location = new System.Drawing.Point(171, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(224, 35);
@@ -124,17 +117,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textMatrialStatus
             // 
+            this.textMatrialStatus.BackColor = System.Drawing.Color.White;
             this.textMatrialStatus.Enabled = false;
             this.textMatrialStatus.Location = new System.Drawing.Point(759, 387);
             this.textMatrialStatus.Name = "textMatrialStatus";
+            this.textMatrialStatus.ReadOnly = true;
             this.textMatrialStatus.Size = new System.Drawing.Size(186, 27);
             this.textMatrialStatus.TabIndex = 64;
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.DarkGreen;
@@ -147,17 +139,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textAddress
             // 
+            this.textAddress.BackColor = System.Drawing.Color.White;
             this.textAddress.Enabled = false;
             this.textAddress.Location = new System.Drawing.Point(759, 318);
             this.textAddress.Name = "textAddress";
+            this.textAddress.ReadOnly = true;
             this.textAddress.Size = new System.Drawing.Size(186, 27);
             this.textAddress.TabIndex = 62;
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.DarkGreen;
@@ -170,17 +161,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textBirth
             // 
+            this.textBirth.BackColor = System.Drawing.Color.White;
             this.textBirth.Enabled = false;
             this.textBirth.Location = new System.Drawing.Point(759, 250);
             this.textBirth.Name = "textBirth";
+            this.textBirth.ReadOnly = true;
             this.textBirth.Size = new System.Drawing.Size(186, 27);
             this.textBirth.TabIndex = 60;
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.DarkGreen;
@@ -193,18 +183,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textEmail
             // 
+            this.textEmail.BackColor = System.Drawing.Color.White;
             this.textEmail.Enabled = false;
             this.textEmail.Location = new System.Drawing.Point(538, 318);
             this.textEmail.Name = "textEmail";
+            this.textEmail.ReadOnly = true;
             this.textEmail.Size = new System.Drawing.Size(186, 27);
             this.textEmail.TabIndex = 58;
-            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.DarkGreen;
@@ -217,17 +205,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textPesel
             // 
+            this.textPesel.BackColor = System.Drawing.Color.White;
             this.textPesel.Enabled = false;
             this.textPesel.Location = new System.Drawing.Point(538, 460);
             this.textPesel.Name = "textPesel";
+            this.textPesel.ReadOnly = true;
             this.textPesel.Size = new System.Drawing.Size(186, 27);
             this.textPesel.TabIndex = 54;
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.DarkGreen;
@@ -240,17 +227,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textPhone
             // 
+            this.textPhone.BackColor = System.Drawing.Color.White;
             this.textPhone.Enabled = false;
             this.textPhone.Location = new System.Drawing.Point(538, 387);
             this.textPhone.Name = "textPhone";
+            this.textPhone.ReadOnly = true;
             this.textPhone.Size = new System.Drawing.Size(186, 27);
             this.textPhone.TabIndex = 52;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.DarkGreen;
@@ -263,17 +249,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textLastName
             // 
+            this.textLastName.BackColor = System.Drawing.Color.White;
             this.textLastName.Enabled = false;
             this.textLastName.Location = new System.Drawing.Point(538, 535);
             this.textLastName.Name = "textLastName";
+            this.textLastName.ReadOnly = true;
             this.textLastName.Size = new System.Drawing.Size(186, 27);
             this.textLastName.TabIndex = 50;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.DarkGreen;
@@ -286,17 +271,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textFirstName
             // 
+            this.textFirstName.BackColor = System.Drawing.Color.White;
             this.textFirstName.Enabled = false;
             this.textFirstName.Location = new System.Drawing.Point(759, 460);
             this.textFirstName.Name = "textFirstName";
+            this.textFirstName.ReadOnly = true;
             this.textFirstName.Size = new System.Drawing.Size(186, 27);
             this.textFirstName.TabIndex = 48;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
@@ -309,18 +293,16 @@ namespace QBankingSystemv2._0.Forms
             // 
             // textBoxUsername
             // 
+            this.textBoxUsername.BackColor = System.Drawing.Color.White;
             this.textBoxUsername.Enabled = false;
             this.textBoxUsername.Location = new System.Drawing.Point(538, 250);
             this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.ReadOnly = true;
             this.textBoxUsername.Size = new System.Drawing.Size(186, 27);
             this.textBoxUsername.TabIndex = 46;
-            this.textBoxUsername.TextChanged += new System.EventHandler(this.textBoxUsername_TextChanged);
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DarkGreen;
@@ -337,6 +319,7 @@ namespace QBankingSystemv2._0.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(977, 582);
             this.Controls.Add(this.textMatrialStatus);
             this.Controls.Add(this.label11);
@@ -397,5 +380,6 @@ namespace QBankingSystemv2._0.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label label4;
+
     }
 }

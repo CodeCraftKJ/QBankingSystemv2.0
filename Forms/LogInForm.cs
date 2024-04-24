@@ -29,7 +29,6 @@ namespace QBankingSystemv2._0.Forms
         {
             new UsernameValidator().ValidateAndShowMessage((TextBox)sender);
         }
-
         private void logInButton_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -37,17 +36,19 @@ namespace QBankingSystemv2._0.Forms
 
             if (LoginManager.ValidateLogin(username, password))
             {
-                MessageBox.Show("Login successful!");
-                ProfileAccountForm ProfileAccountForm = new ProfileAccountForm();
+                UserDataManager.SetCurrentUserData(username);
+                ProfileAccountForm profileAccountForm = new ProfileAccountForm();
                 this.Hide();
-                ProfileAccountForm.Show();
-                ProfileAccountForm.FormClosed += (s, args) => this.Close();
+                profileAccountForm.Show();
+                profileAccountForm.FormClosed += (s, args) => this.Close();
             }
             else
             {
                 MessageBox.Show("Invalid username or password.");
             }
         }
+
+
 
     }
 
