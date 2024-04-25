@@ -93,6 +93,16 @@ namespace QBankingSystemv2._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forest3 {
+            get {
+                object obj = ResourceManager.GetObject("forest3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hand {
             get {
                 object obj = ResourceManager.GetObject("hand", resourceCulture);
@@ -136,6 +146,16 @@ namespace QBankingSystemv2._0.Properties {
         internal static System.Drawing.Bitmap qpaylogo2 {
             get {
                 object obj = ResourceManager.GetObject("qpaylogo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trees {
+            get {
+                object obj = ResourceManager.GetObject("trees", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

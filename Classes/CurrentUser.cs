@@ -9,4 +9,5 @@
     public static string Phone { get; set; }
     public static string LastName { get; set; }
     public static string FirstName { get; set; }
+    public static int UserID { get; set; }
 }

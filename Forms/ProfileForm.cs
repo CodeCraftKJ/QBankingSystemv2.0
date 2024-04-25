@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.Forms
@@ -17,8 +18,6 @@ namespace QBankingSystemv2._0.Forms
             textEmail.Text = CurrentUser.Email;
             textPesel.Text = CurrentUser.Pesel;
             textPhone.Text = CurrentUser.Phone;
-            textLastName.Text = CurrentUser.LastName;
-            textFirstName.Text = CurrentUser.FirstName;
         }
 
         private void ProfileForm_Load(object sender, EventArgs e)
@@ -29,6 +28,21 @@ namespace QBankingSystemv2._0.Forms
         private void UserImage_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void logOutClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BankAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateAccountBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
