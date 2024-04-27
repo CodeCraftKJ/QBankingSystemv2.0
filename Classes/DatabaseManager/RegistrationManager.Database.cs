@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 
-namespace QBankingSystemv2._0
+namespace QBankingSystemv2._0.Classes.DatabaseManager
 {
     public static partial class RegistrationManager
     {

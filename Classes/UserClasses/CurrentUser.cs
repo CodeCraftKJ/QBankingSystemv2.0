@@ -10,4 +10,18 @@
     public static string LastName { get; set; }
     public static string FirstName { get; set; }
     public static int UserID { get; set; }
+
+    public static void Clear()
+    {
+        Username = null;
+        MaterialStatus = null;
+        Address = null;
+        BirthDate = null;
+        Email = null;
+        Pesel = null;
+        Phone = null;
+        LastName = null;
+        FirstName = null;
+        UserID = 0;
+    }
 }

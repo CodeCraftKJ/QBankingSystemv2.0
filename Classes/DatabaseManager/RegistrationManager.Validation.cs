@@ -2,7 +2,7 @@
 using QBankingSystemv2._0.ValidationClasses;
 using System.Collections.Generic;
 
-namespace QBankingSystemv2._0
+namespace QBankingSystemv2._0.Classes.DatabaseManager
 {
     public static partial class RegistrationManager
     {

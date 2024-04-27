@@ -47,13 +47,13 @@ namespace QBankingSystemv2._0.Forms
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoansBtn = new System.Windows.Forms.Button();
+            this.TransfersBtn = new System.Windows.Forms.Button();
             this.CreateAccountBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.BankAccounts = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.signInButton = new System.Windows.Forms.Button();
+            this.LogOutBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,6 @@ namespace QBankingSystemv2._0.Forms
             this.textUserName.ReadOnly = true;
             this.textUserName.Size = new System.Drawing.Size(917, 53);
             this.textUserName.TabIndex = 43;
-            this.textUserName.TextChanged += new System.EventHandler(this.textUserName_TextChanged);
             // 
             // label1
             // 
@@ -80,7 +79,6 @@ namespace QBankingSystemv2._0.Forms
             this.label1.Size = new System.Drawing.Size(134, 50);
             this.label1.TabIndex = 42;
             this.label1.Text = "Profile";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textMatrialStatus
             // 
@@ -92,7 +90,6 @@ namespace QBankingSystemv2._0.Forms
             this.textMatrialStatus.ReadOnly = true;
             this.textMatrialStatus.Size = new System.Drawing.Size(173, 27);
             this.textMatrialStatus.TabIndex = 64;
-            this.textMatrialStatus.TextChanged += new System.EventHandler(this.textMatrialStatus_TextChanged);
             // 
             // label11
             // 
@@ -106,7 +103,6 @@ namespace QBankingSystemv2._0.Forms
             this.label11.Size = new System.Drawing.Size(121, 23);
             this.label11.TabIndex = 63;
             this.label11.Text = "Marital Status";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // textAddress
             // 
@@ -118,7 +114,6 @@ namespace QBankingSystemv2._0.Forms
             this.textAddress.ReadOnly = true;
             this.textAddress.Size = new System.Drawing.Size(173, 27);
             this.textAddress.TabIndex = 62;
-            this.textAddress.TextChanged += new System.EventHandler(this.textAddress_TextChanged);
             // 
             // label12
             // 
@@ -132,7 +127,6 @@ namespace QBankingSystemv2._0.Forms
             this.label12.Size = new System.Drawing.Size(74, 23);
             this.label12.TabIndex = 61;
             this.label12.Text = "Address";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // textBirth
             // 
@@ -144,7 +138,6 @@ namespace QBankingSystemv2._0.Forms
             this.textBirth.ReadOnly = true;
             this.textBirth.Size = new System.Drawing.Size(173, 27);
             this.textBirth.TabIndex = 60;
-            this.textBirth.TextChanged += new System.EventHandler(this.textBirth_TextChanged);
             // 
             // label13
             // 
@@ -158,7 +151,6 @@ namespace QBankingSystemv2._0.Forms
             this.label13.Size = new System.Drawing.Size(109, 23);
             this.label13.TabIndex = 59;
             this.label13.Text = "Date of Birth";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // textEmail
             // 
@@ -170,7 +162,6 @@ namespace QBankingSystemv2._0.Forms
             this.textEmail.ReadOnly = true;
             this.textEmail.Size = new System.Drawing.Size(173, 27);
             this.textEmail.TabIndex = 58;
-            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // label14
             // 
@@ -184,7 +175,6 @@ namespace QBankingSystemv2._0.Forms
             this.label14.Size = new System.Drawing.Size(54, 23);
             this.label14.TabIndex = 57;
             this.label14.Text = "Email";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textPesel
             // 
@@ -196,7 +186,6 @@ namespace QBankingSystemv2._0.Forms
             this.textPesel.ReadOnly = true;
             this.textPesel.Size = new System.Drawing.Size(173, 27);
             this.textPesel.TabIndex = 54;
-            this.textPesel.TextChanged += new System.EventHandler(this.textPesel_TextChanged);
             // 
             // label7
             // 
@@ -210,7 +199,6 @@ namespace QBankingSystemv2._0.Forms
             this.label7.Size = new System.Drawing.Size(60, 23);
             this.label7.TabIndex = 53;
             this.label7.Text = "PESEL";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textPhone
             // 
@@ -222,7 +210,6 @@ namespace QBankingSystemv2._0.Forms
             this.textPhone.ReadOnly = true;
             this.textPhone.Size = new System.Drawing.Size(173, 27);
             this.textPhone.TabIndex = 52;
-            this.textPhone.TextChanged += new System.EventHandler(this.textPhone_TextChanged);
             // 
             // label6
             // 
@@ -236,7 +223,6 @@ namespace QBankingSystemv2._0.Forms
             this.label6.Size = new System.Drawing.Size(57, 23);
             this.label6.TabIndex = 51;
             this.label6.Text = "Phone";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBoxUsername
             // 
@@ -248,7 +234,6 @@ namespace QBankingSystemv2._0.Forms
             this.textBoxUsername.ReadOnly = true;
             this.textBoxUsername.Size = new System.Drawing.Size(173, 27);
             this.textBoxUsername.TabIndex = 46;
-            this.textBoxUsername.TextChanged += new System.EventHandler(this.textBoxUsername_TextChanged);
             // 
             // label4
             // 
@@ -262,7 +247,6 @@ namespace QBankingSystemv2._0.Forms
             this.label4.Size = new System.Drawing.Size(88, 23);
             this.label4.TabIndex = 45;
             this.label4.Text = "Username";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel2
             // 
@@ -270,14 +254,14 @@ namespace QBankingSystemv2._0.Forms
             this.panel2.BackgroundImage = global::QBankingSystemv2._0.Properties.Resources.qpaylogo2;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.LoansBtn);
+            this.panel2.Controls.Add(this.TransfersBtn);
             this.panel2.Controls.Add(this.CreateAccountBtn);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.BankAccounts);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textMatrialStatus);
-            this.panel2.Controls.Add(this.signInButton);
+            this.panel2.Controls.Add(this.LogOutBtn);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.textAddress);
@@ -297,39 +281,38 @@ namespace QBankingSystemv2._0.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(936, 641);
             this.panel2.TabIndex = 69;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button2
+            // LoansBtn
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LoansBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Azure;
-            this.button2.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button2.Location = new System.Drawing.Point(205, 346);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(235, 59);
-            this.button2.TabIndex = 70;
-            this.button2.Text = "Loans";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.LoansBtn.BackColor = System.Drawing.Color.Azure;
+            this.LoansBtn.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LoansBtn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.LoansBtn.Location = new System.Drawing.Point(205, 346);
+            this.LoansBtn.Name = "LoansBtn";
+            this.LoansBtn.Size = new System.Drawing.Size(235, 59);
+            this.LoansBtn.TabIndex = 70;
+            this.LoansBtn.Text = "Loans";
+            this.LoansBtn.UseVisualStyleBackColor = false;
+            this.LoansBtn.Click += new System.EventHandler(this.LoansBtn_Click);
             // 
-            // button1
+            // TransfersBtn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TransfersBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Azure;
-            this.button1.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button1.Location = new System.Drawing.Point(204, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 59);
-            this.button1.TabIndex = 69;
-            this.button1.Text = "Transfers";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TransfersBtn.BackColor = System.Drawing.Color.Azure;
+            this.TransfersBtn.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TransfersBtn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.TransfersBtn.Location = new System.Drawing.Point(204, 414);
+            this.TransfersBtn.Name = "TransfersBtn";
+            this.TransfersBtn.Size = new System.Drawing.Size(235, 59);
+            this.TransfersBtn.TabIndex = 69;
+            this.TransfersBtn.Text = "Transfers";
+            this.TransfersBtn.UseVisualStyleBackColor = false;
+            this.TransfersBtn.Click += new System.EventHandler(this.TransfersBtn_Click);
             // 
             // CreateAccountBtn
             // 
@@ -353,13 +336,12 @@ namespace QBankingSystemv2._0.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(789, 305);
+            this.label3.Location = new System.Drawing.Point(789, 320);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 23);
             this.label3.TabIndex = 67;
             this.label3.Text = "Bank Accounts";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // BankAccounts
             // 
@@ -373,7 +355,6 @@ namespace QBankingSystemv2._0.Forms
             this.BankAccounts.Name = "BankAccounts";
             this.BankAccounts.Size = new System.Drawing.Size(470, 264);
             this.BankAccounts.TabIndex = 66;
-            this.BankAccounts.SelectedIndexChanged += new System.EventHandler(this.BankAccounts_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -386,23 +367,22 @@ namespace QBankingSystemv2._0.Forms
             this.label2.Size = new System.Drawing.Size(142, 23);
             this.label2.TabIndex = 65;
             this.label2.Text = "Individual Profile";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // signInButton
+            // LogOutBtn
             // 
-            this.signInButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LogOutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.signInButton.BackColor = System.Drawing.Color.Azure;
-            this.signInButton.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.signInButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.signInButton.Location = new System.Drawing.Point(204, 560);
-            this.signInButton.Name = "signInButton";
-            this.signInButton.Size = new System.Drawing.Size(235, 59);
-            this.signInButton.TabIndex = 39;
-            this.signInButton.Text = "LOG OUT";
-            this.signInButton.UseVisualStyleBackColor = false;
-            this.signInButton.Click += new System.EventHandler(this.logOutClick);
+            this.LogOutBtn.BackColor = System.Drawing.Color.Azure;
+            this.LogOutBtn.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LogOutBtn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.LogOutBtn.Location = new System.Drawing.Point(204, 560);
+            this.LogOutBtn.Name = "LogOutBtn";
+            this.LogOutBtn.Size = new System.Drawing.Size(235, 59);
+            this.LogOutBtn.TabIndex = 39;
+            this.LogOutBtn.Text = "LOG OUT";
+            this.LogOutBtn.UseVisualStyleBackColor = false;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
             // ProfileAccountForm
             // 
@@ -443,12 +423,12 @@ namespace QBankingSystemv2._0.Forms
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button signInButton;
+        private System.Windows.Forms.Button LogOutBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox BankAccounts;
         private System.Windows.Forms.Button CreateAccountBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button TransfersBtn;
+        private System.Windows.Forms.Button LoansBtn;
     }
 }
