@@ -1,5 +1,4 @@
 ﻿using FluentValidation.Results;
-using QBankingSystemv2._0.Classes.DatabaseManager;
 using QBankingSystemv2._0.ValidationClasses;
 using System;
 using System.Windows.Forms;
@@ -70,7 +69,7 @@ namespace QBankingSystemv2._0.Forms
 
         private void initialBalanceTextBox_TextChanged(object sender, EventArgs e)
         {
-            ValidationResult result = initialBalanceValidator.ValidateAndShowMessage(transferLimitTextBox);
+            ValidationResult result = initialBalanceValidator.ValidateAndShowMessage(initialBalanceTextBox);
             createButton.Enabled = result.IsValid;
         }
 

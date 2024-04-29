@@ -8,7 +8,6 @@ public static class AccountRegistrationManager
     public static void RegisterAccount(string accountName, string accountType, string currency, decimal initialBalance,
                                         decimal depositLimit, decimal withdrawalLimit, decimal transferLimit, int userID)
     {
-        // Tworzenie unikalnego identyfikatora konta
         int accountID = GenerateAccountID(accountType);
 
         string connectionString = ConfigurationManager.GetConnectionString();
@@ -51,10 +50,9 @@ public static class AccountRegistrationManager
     private static int GenerateAccountID(string accountType)
     {
         string prefix = GetAccountTypePrefix(accountType);
-        string timestamp = DateTime.Now.ToString("yyMMddHHmm");
-        string randomDigits = GenerateRandomDigits(4);
+        string randomDigits = GenerateRandomDigits(8);
 
-        string accountIDString = prefix + timestamp + randomDigits;
+        string accountIDString = prefix + randomDigits;
         int accountID = int.Parse(accountIDString);
 
         return accountID;
@@ -67,9 +65,9 @@ public static class AccountRegistrationManager
             case "Savings Account":
                 return "1";
             case "Checking Account":
-                return "3";
-            default:
                 return "2";
+            default:
+                return "0";
         }
     }
 

@@ -355,6 +355,7 @@ namespace QBankingSystemv2._0.Forms
             this.BankAccounts.Name = "BankAccounts";
             this.BankAccounts.Size = new System.Drawing.Size(470, 264);
             this.BankAccounts.TabIndex = 66;
+            this.BankAccounts.SelectedIndexChanged += new System.EventHandler(this.BankAccounts_SelectedIndexChanged);
             // 
             // label2
             // 
