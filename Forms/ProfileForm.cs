@@ -36,7 +36,9 @@ namespace QBankingSystemv2._0.Forms
 
         private void TransfersBtn_Click(object sender, EventArgs e)
         {
-
+            CreateTransferForm transferForm = new();
+            transferForm.FormClosed += (s, args) => RefreshAccountList();
+            transferForm.Show();
         }
 
         private void CreateAccountBtn_Click(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace QBankingSystemv2._0.Forms
                     IAccount selectedAccount = GetUserAccountByNameAndID(accountName, accountID);
                     if (selectedAccount != null)
                     {
-                        AccountForm accountForm = new AccountForm(selectedAccount);
+                        Account accountForm = new Account(selectedAccount);
                         accountForm.Show();
                     }
                 }
