@@ -28,8 +28,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Classes\ValidationClasses\Transfer\" />
-  </ItemGroup>
-
 </Project>

@@ -37,18 +37,6 @@ namespace QBankingSystemv2._0.Forms
             createButton.Enabled = result.IsValid;
         }
 
-        private void accountTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ValidationResult result = accountTypeValidator.ValidateAndShowMessage(accountTypeComboBox);
-            createButton.Enabled = result.IsValid;
-        }
-
-        private void currencyComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ValidationResult result = currencyValidator.ValidateAndShowMessage(currencyComboBox);
-            createButton.Enabled = result.IsValid;
-        }
-
         private void depositLimitTextBox_TextChanged(object sender, EventArgs e)
         {
             ValidationResult result = depositLimitValidator.ValidateAndShowMessage(depositLimitTextBox);
@@ -104,6 +92,19 @@ namespace QBankingSystemv2._0.Forms
             {
                 MessageBox.Show("Please correct the errors in the form.");
             }
+        }
+
+        private void accountTypeComboBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidationResult result = accountTypeValidator.ValidateAndShowMessage(accountTypeComboBox);
+            createButton.Enabled = result.IsValid;
+
+        }
+
+        private void currencyComboBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidationResult result = currencyValidator.ValidateAndShowMessage(currencyComboBox);
+            createButton.Enabled = result.IsValid;
         }
     }
 }

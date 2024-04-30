@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.ValidationClasses
 {
-    public class AccountTypeValidator : AbstractValidator<string>
+    public class SourceAccountValidator : AbstractValidator<string>
     {
         private static ToolTip toolTip = new ToolTip();
 
@@ -23,10 +23,10 @@ namespace QBankingSystemv2._0.ValidationClasses
             return result;
         }
 
-        public AccountTypeValidator()
+        public SourceAccountValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Please select an account type.");
+                .NotEmpty().WithMessage("Please select a source account.");
         }
     }
 }

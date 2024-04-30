@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateTransferForm));
             this.sourceAccountLabel = new System.Windows.Forms.Label();
-            this.sourceAccountComboBox = new System.Windows.Forms.ComboBox();
             this.destinationAccountLabel = new System.Windows.Forms.Label();
-            this.destinationAccountComboBox = new System.Windows.Forms.ComboBox();
             this.transferTypeLabel = new System.Windows.Forms.Label();
-            this.transferTypeComboBox = new System.Windows.Forms.ComboBox();
             this.amountLabel = new System.Windows.Forms.Label();
             this.amountTextBox = new System.Windows.Forms.TextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.createTransferButton = new System.Windows.Forms.Button();
+            this.transferTypeComboBox = new System.Windows.Forms.TextBox();
+            this.destinationAccountComboBox = new System.Windows.Forms.TextBox();
+            this.sourceAccountComboBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // sourceAccountLabel
@@ -51,14 +51,6 @@
             this.sourceAccountLabel.TabIndex = 0;
             this.sourceAccountLabel.Text = "Source Account:";
             // 
-            // sourceAccountComboBox
-            // 
-            this.sourceAccountComboBox.FormattingEnabled = true;
-            this.sourceAccountComboBox.Location = new System.Drawing.Point(150, 20);
-            this.sourceAccountComboBox.Name = "sourceAccountComboBox";
-            this.sourceAccountComboBox.Size = new System.Drawing.Size(150, 28);
-            this.sourceAccountComboBox.TabIndex = 1;
-            // 
             // destinationAccountLabel
             // 
             this.destinationAccountLabel.AutoSize = true;
@@ -68,14 +60,6 @@
             this.destinationAccountLabel.TabIndex = 2;
             this.destinationAccountLabel.Text = "Destination Account:";
             // 
-            // destinationAccountComboBox
-            // 
-            this.destinationAccountComboBox.FormattingEnabled = true;
-            this.destinationAccountComboBox.Location = new System.Drawing.Point(180, 60);
-            this.destinationAccountComboBox.Name = "destinationAccountComboBox";
-            this.destinationAccountComboBox.Size = new System.Drawing.Size(150, 28);
-            this.destinationAccountComboBox.TabIndex = 3;
-            // 
             // transferTypeLabel
             // 
             this.transferTypeLabel.AutoSize = true;
@@ -84,17 +68,6 @@
             this.transferTypeLabel.Size = new System.Drawing.Size(99, 20);
             this.transferTypeLabel.TabIndex = 4;
             this.transferTypeLabel.Text = "Transfer Type:";
-            // 
-            // transferTypeComboBox
-            // 
-            this.transferTypeComboBox.FormattingEnabled = true;
-            this.transferTypeComboBox.Items.AddRange(new object[] {
-            "Internal Transfer",
-            "External Transfer"});
-            this.transferTypeComboBox.Location = new System.Drawing.Point(150, 100);
-            this.transferTypeComboBox.Name = "transferTypeComboBox";
-            this.transferTypeComboBox.Size = new System.Drawing.Size(150, 28);
-            this.transferTypeComboBox.TabIndex = 5;
             // 
             // amountLabel
             // 
@@ -111,6 +84,7 @@
             this.amountTextBox.Name = "amountTextBox";
             this.amountTextBox.Size = new System.Drawing.Size(150, 27);
             this.amountTextBox.TabIndex = 7;
+            this.amountTextBox.TextChanged += new System.EventHandler(this.amountTextBox_TextChanged_1);
             // 
             // descriptionLabel
             // 
@@ -128,6 +102,7 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(200, 100);
             this.descriptionTextBox.TabIndex = 9;
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.descriptionTextBox_TextChanged_1);
             // 
             // createTransferButton
             // 
@@ -139,22 +114,46 @@
             this.createTransferButton.UseVisualStyleBackColor = true;
             this.createTransferButton.Click += new System.EventHandler(this.createTransferButton_Click);
             // 
+            // transferTypeComboBox
+            // 
+            this.transferTypeComboBox.Location = new System.Drawing.Point(150, 100);
+            this.transferTypeComboBox.Name = "transferTypeComboBox";
+            this.transferTypeComboBox.Size = new System.Drawing.Size(150, 27);
+            this.transferTypeComboBox.TabIndex = 11;
+            this.transferTypeComboBox.TextChanged += new System.EventHandler(this.transferTypeComboBox_TextChanged);
+            // 
+            // destinationAccountComboBox
+            // 
+            this.destinationAccountComboBox.Location = new System.Drawing.Point(172, 60);
+            this.destinationAccountComboBox.Name = "destinationAccountComboBox";
+            this.destinationAccountComboBox.Size = new System.Drawing.Size(150, 27);
+            this.destinationAccountComboBox.TabIndex = 12;
+            this.destinationAccountComboBox.TextChanged += new System.EventHandler(this.destinationAccountComboBox_TextChanged);
+            // 
+            // sourceAccountComboBox
+            // 
+            this.sourceAccountComboBox.Location = new System.Drawing.Point(150, 17);
+            this.sourceAccountComboBox.Name = "sourceAccountComboBox";
+            this.sourceAccountComboBox.Size = new System.Drawing.Size(150, 27);
+            this.sourceAccountComboBox.TabIndex = 13;
+            this.sourceAccountComboBox.TextChanged += new System.EventHandler(this.sourceAccountComboBox_TextChanged);
+            // 
             // CreateTransferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(384, 350);
+            this.Controls.Add(this.sourceAccountComboBox);
+            this.Controls.Add(this.destinationAccountComboBox);
+            this.Controls.Add(this.transferTypeComboBox);
             this.Controls.Add(this.createTransferButton);
             this.Controls.Add(this.descriptionTextBox);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.amountTextBox);
             this.Controls.Add(this.amountLabel);
-            this.Controls.Add(this.transferTypeComboBox);
             this.Controls.Add(this.transferTypeLabel);
-            this.Controls.Add(this.destinationAccountComboBox);
             this.Controls.Add(this.destinationAccountLabel);
-            this.Controls.Add(this.sourceAccountComboBox);
             this.Controls.Add(this.sourceAccountLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateTransferForm";
@@ -167,15 +166,15 @@
         #endregion
 
         public System.Windows.Forms.Label sourceAccountLabel;
-        public System.Windows.Forms.ComboBox sourceAccountComboBox;
         public System.Windows.Forms.Label destinationAccountLabel;
-        public System.Windows.Forms.ComboBox destinationAccountComboBox;
         public System.Windows.Forms.Label transferTypeLabel;
-        public System.Windows.Forms.ComboBox transferTypeComboBox;
         public System.Windows.Forms.Label amountLabel;
         public System.Windows.Forms.TextBox amountTextBox;
         public System.Windows.Forms.Label descriptionLabel;
         public System.Windows.Forms.TextBox descriptionTextBox;
         public System.Windows.Forms.Button createTransferButton;
+        public System.Windows.Forms.TextBox transferTypeComboBox;
+        public System.Windows.Forms.TextBox destinationAccountComboBox;
+        public System.Windows.Forms.TextBox sourceAccountComboBox;
     }
 }

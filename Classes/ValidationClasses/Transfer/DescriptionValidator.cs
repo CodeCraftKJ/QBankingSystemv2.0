@@ -4,29 +4,29 @@ using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.ValidationClasses
 {
-    public class AccountTypeValidator : AbstractValidator<string>
+    public class DescriptionValidator : AbstractValidator<string>
     {
         private static ToolTip toolTip = new ToolTip();
 
-        public ValidationResult ValidateAndShowMessage(TextBox comboBox)
+        public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {
-            string value = comboBox.Text;
+            string value = textBox.Text;
             var result = Validate(value);
             if (!result.IsValid)
             {
-                toolTip.Show(result.Errors[0].ErrorMessage, comboBox, comboBox.Width, 0);
+                toolTip.Show(result.Errors[0].ErrorMessage, textBox, textBox.Width, 0);
             }
             else
             {
-                toolTip.Hide(comboBox);
+                toolTip.Hide(textBox);
             }
             return result;
         }
 
-        public AccountTypeValidator()
+        public DescriptionValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Please select an account type.");
+                .NotEmpty().WithMessage("Description cannot be empty.");
         }
     }
 }

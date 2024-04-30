@@ -8,9 +8,9 @@ namespace QBankingSystemv2._0.ValidationClasses
     {
         private static ToolTip toolTip = new ToolTip();
 
-        public ValidationResult ValidateAndShowMessage(ComboBox comboBox)
+        public ValidationResult ValidateAndShowMessage(TextBox comboBox)
         {
-            string value = comboBox.SelectedItem?.ToString();
+            string value = comboBox.Text;
             var result = Validate(value);
             if (!result.IsValid)
             {

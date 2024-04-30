@@ -32,9 +32,7 @@
             this.accountNameLabel = new System.Windows.Forms.Label();
             this.accountNameTextBox = new System.Windows.Forms.TextBox();
             this.accountTypeLabel = new System.Windows.Forms.Label();
-            this.accountTypeComboBox = new System.Windows.Forms.ComboBox();
             this.currencyLabel = new System.Windows.Forms.Label();
-            this.currencyComboBox = new System.Windows.Forms.ComboBox();
             this.initialBalanceLabel = new System.Windows.Forms.Label();
             this.initialBalanceTextBox = new System.Windows.Forms.TextBox();
             this.depositLimitLabel = new System.Windows.Forms.Label();
@@ -44,6 +42,8 @@
             this.transferLimitLabel = new System.Windows.Forms.Label();
             this.transferLimitTextBox = new System.Windows.Forms.TextBox();
             this.createButton = new System.Windows.Forms.Button();
+            this.currencyComboBox = new System.Windows.Forms.TextBox();
+            this.accountTypeComboBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // accountNameLabel
@@ -72,18 +72,6 @@
             this.accountTypeLabel.TabIndex = 2;
             this.accountTypeLabel.Text = "Account Type:";
             // 
-            // accountTypeComboBox
-            // 
-            this.accountTypeComboBox.FormattingEnabled = true;
-            this.accountTypeComboBox.Items.AddRange(new object[] {
-            "Savings Account",
-            "Checking Account"});
-            this.accountTypeComboBox.Location = new System.Drawing.Point(130, 60);
-            this.accountTypeComboBox.Name = "accountTypeComboBox";
-            this.accountTypeComboBox.Size = new System.Drawing.Size(150, 28);
-            this.accountTypeComboBox.TabIndex = 3;
-            this.accountTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.accountTypeComboBox_SelectedIndexChanged);
-            // 
             // currencyLabel
             // 
             this.currencyLabel.AutoSize = true;
@@ -92,19 +80,6 @@
             this.currencyLabel.Size = new System.Drawing.Size(69, 20);
             this.currencyLabel.TabIndex = 4;
             this.currencyLabel.Text = "Currency:";
-            // 
-            // currencyComboBox
-            // 
-            this.currencyComboBox.FormattingEnabled = true;
-            this.currencyComboBox.Items.AddRange(new object[] {
-            "USD",
-            "EUR",
-            "PLN"});
-            this.currencyComboBox.Location = new System.Drawing.Point(130, 100);
-            this.currencyComboBox.Name = "currencyComboBox";
-            this.currencyComboBox.Size = new System.Drawing.Size(150, 28);
-            this.currencyComboBox.TabIndex = 5;
-            this.currencyComboBox.SelectedIndexChanged += new System.EventHandler(this.currencyComboBox_SelectedIndexChanged);
             // 
             // initialBalanceLabel
             // 
@@ -184,12 +159,30 @@
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
+            // currencyComboBox
+            // 
+            this.currencyComboBox.Location = new System.Drawing.Point(130, 100);
+            this.currencyComboBox.Name = "currencyComboBox";
+            this.currencyComboBox.Size = new System.Drawing.Size(150, 27);
+            this.currencyComboBox.TabIndex = 15;
+            this.currencyComboBox.TextChanged += new System.EventHandler(this.currencyComboBox_TextChanged);
+            // 
+            // accountTypeComboBox
+            // 
+            this.accountTypeComboBox.Location = new System.Drawing.Point(130, 60);
+            this.accountTypeComboBox.Name = "accountTypeComboBox";
+            this.accountTypeComboBox.Size = new System.Drawing.Size(150, 27);
+            this.accountTypeComboBox.TabIndex = 16;
+            this.accountTypeComboBox.TextChanged += new System.EventHandler(this.accountTypeComboBox_TextChanged);
+            // 
             // CreateAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(283, 350);
+            this.Controls.Add(this.accountTypeComboBox);
+            this.Controls.Add(this.currencyComboBox);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.transferLimitTextBox);
             this.Controls.Add(this.transferLimitLabel);
@@ -199,9 +192,7 @@
             this.Controls.Add(this.depositLimitLabel);
             this.Controls.Add(this.initialBalanceTextBox);
             this.Controls.Add(this.initialBalanceLabel);
-            this.Controls.Add(this.currencyComboBox);
             this.Controls.Add(this.currencyLabel);
-            this.Controls.Add(this.accountTypeComboBox);
             this.Controls.Add(this.accountTypeLabel);
             this.Controls.Add(this.accountNameTextBox);
             this.Controls.Add(this.accountNameLabel);
@@ -219,9 +210,7 @@
         private System.Windows.Forms.Label accountNameLabel;
         private System.Windows.Forms.TextBox accountNameTextBox;
         private System.Windows.Forms.Label accountTypeLabel;
-        private System.Windows.Forms.ComboBox accountTypeComboBox;
         private System.Windows.Forms.Label currencyLabel;
-        private System.Windows.Forms.ComboBox currencyComboBox;
         private System.Windows.Forms.Label initialBalanceLabel;
         private System.Windows.Forms.TextBox initialBalanceTextBox;
         private System.Windows.Forms.Label depositLimitLabel;
@@ -231,5 +220,7 @@
         private System.Windows.Forms.Label transferLimitLabel;
         private System.Windows.Forms.TextBox transferLimitTextBox;
         private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.TextBox currencyComboBox;
+        private System.Windows.Forms.TextBox accountTypeComboBox;
     }
 }
