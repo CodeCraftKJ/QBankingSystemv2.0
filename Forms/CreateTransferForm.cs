@@ -42,17 +42,15 @@ namespace QBankingSystemv2._0.Forms
                 transferTypeValidationResult.IsValid && amountValidationResult.IsValid &&
                 descriptionValidationResult.IsValid)
             {
-                string sourceAccountID = sourceAccountComboBox.SelectedItem.ToString();
-                string destinationAccountID = destinationAccountComboBox.SelectedItem.ToString();
-                string transactionType = transferTypeComboBox.SelectedItem.ToString();
+                string sourceAccountID = sourceAccountComboBox.Text;
+                string destinationAccountID = destinationAccountComboBox.Text;
+                string transactionType = transferTypeComboBox.Text;
                 decimal amount = decimal.Parse(amountTextBox.Text);
                 string description = descriptionTextBox.Text;
 
                 Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, transactionType, amount, description);
 
                 TransactionManager.ExecuteTransaction(transaction,CurrentUser.UserID);
-
-                MessageBox.Show("Transfer created successfully!");
             }
             else
             {

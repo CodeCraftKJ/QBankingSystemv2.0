@@ -26,7 +26,9 @@ namespace QBankingSystemv2._0.ValidationClasses
         public TransferTypeValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Please select a transfer type.");
+                .Must(value => value == "Internal Transfer" || value == "External Transfer")
+                .WithMessage("Please select either Internal Transfer or External Transfer.");
         }
+
     }
 }

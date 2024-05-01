@@ -26,7 +26,8 @@ namespace QBankingSystemv2._0.ValidationClasses
         public SourceAccountValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Please select a source account.");
+                .NotEmpty().WithMessage("Please select a source account.")
+                .Matches(@"^\d{9}$").WithMessage("Source account must be a 9-digit number.");
         }
     }
 }

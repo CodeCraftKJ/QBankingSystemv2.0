@@ -1,6 +1,8 @@
 ﻿using QBankingSystemv2._0.Classes.Transactions;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.Classes.DatabaseManager
 {
@@ -10,27 +12,35 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
         {
             string connectionString = ConfigurationManager.GetConnectionString();
 
-            if (!IsUserAccount(userID, transaction.SourceAccountID))
-            {
-                Console.WriteLine("Error: Source account does not belong to the user.");
-                return;
-            }
-
-            if (!IsAccountExists(transaction.DestinationAccountID))
-            {
-                Console.WriteLine("Error: Destination account does not exist.");
-                return;
-            }
-
-            string query = @"BEGIN TRANSACTION; " +
-                           "INSERT INTO QPayTransactions (TransactionID, SourceAccountID, DestinationAccountID, TransactionType, Amount, TransactionDate, Description) " +
-                           "VALUES (@TransactionID, @SourceAccountID, @DestinationAccountID, @TransactionType, @Amount, @TransactionDate, @Description); " +
-                           "UPDATE QPayAccounts SET Balance = Balance - @Amount WHERE AccountID = @SourceAccountID; " +
-                           "UPDATE QPayAccounts SET Balance = Balance + @Amount WHERE AccountID = @DestinationAccountID; " +
-                           "COMMIT;";
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                connection.Open();
+
+                if (!IsUserAccount(connection, userID, transaction.SourceAccountID))
+                {
+                    MessageBox.Show("Error: Source account does not belong to the user.");
+                    return;
+                }
+
+                if (!IsAccountExists(connection, transaction.DestinationAccountID))
+                {
+                    MessageBox.Show("Error: Destination account does not exist.");
+                    return;
+                }
+
+                if (!CheckBalanceAndTransferLimit(connection, transaction.SourceAccountID, transaction.Amount))
+                {
+                    MessageBox.Show("Error: Insufficient balance or transfer limit exceeded.");
+                    return;
+                }
+
+                string query = @"BEGIN TRANSACTION; " +
+                               "INSERT INTO QPayTransactions (TransactionID, SourceAccountID, DestinationAccountID, TransactionType, Amount, TransactionDate, Description) " +
+                               "VALUES (@TransactionID, @SourceAccountID, @DestinationAccountID, @TransactionType, @Amount, @TransactionDate, @Description); " +
+                               "UPDATE QPayAccounts SET Balance = Balance - @Amount WHERE AccountID = @SourceAccountID; " +
+                               "UPDATE QPayAccounts SET Balance = Balance + @Amount WHERE AccountID = @DestinationAccountID; " +
+                               "COMMIT;";
+
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@TransactionID", transaction.TransactionID);
                 command.Parameters.AddWithValue("@SourceAccountID", transaction.SourceAccountID);
@@ -42,7 +52,6 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
 
                 try
                 {
-                    connection.Open();
                     command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
@@ -51,52 +60,84 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                 }
             }
         }
-private static bool IsUserAccount(int userID, string accountID)
+
+        public static List<Transaction> GetAccountTransfers(string accountID)
         {
+            List<Transaction> accountTransfers = new List<Transaction>();
+
             string connectionString = ConfigurationManager.GetConnectionString();
-            string query = "SELECT COUNT(*) FROM QPayAccounts WHERE UserID = @UserID AND AccountID = @AccountID";
+
+            string query = @"SELECT * FROM QPayTransactions WHERE SourceAccountID = @AccountID OR DestinationAccountID = @AccountID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserID", userID);
                 command.Parameters.AddWithValue("@AccountID", accountID);
 
                 try
                 {
                     connection.Open();
-                    int count = (int)command.ExecuteScalar();
-                    return count > 0;
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read()) {
+                        Transaction transaction = new Transaction(
+                            reader["SourceAccountID"].ToString(),
+                            reader["DestinationAccountID"].ToString(),
+                            reader["TransactionType"].ToString(),
+                            Convert.ToDecimal(reader["Amount"]),
+                            reader["Description"].ToString()
+                        );
+                        accountTransfers.Add(transaction);
+                    }
+
+                    reader.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error: " + ex.Message);
-                    return false;
                 }
             }
+
+            return accountTransfers;
         }
-        private static bool IsAccountExists(string accountID)
+
+
+        private static bool IsUserAccount(SqlConnection connection, int userID, string accountID)
         {
-            string connectionString = ConfigurationManager.GetConnectionString();
+            string query = "SELECT COUNT(*) FROM QPayAccounts WHERE UserID = @UserID AND AccountID = @AccountID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@UserID", userID);
+            command.Parameters.AddWithValue("@AccountID", accountID);
+            int count = (int)command.ExecuteScalar();
+            return count > 0;
+        }
+
+        private static bool IsAccountExists(SqlConnection connection, string accountID)
+        {
             string query = "SELECT COUNT(*) FROM QPayAccounts WHERE AccountID = @AccountID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@AccountID", accountID);
+            int count = (int)command.ExecuteScalar();
+            return count > 0;
+        }
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+        private static bool CheckBalanceAndTransferLimit(SqlConnection connection, string accountID, decimal amount)
+        {
+            string query = "SELECT Balance, TransferLimit FROM QPayAccounts WHERE AccountID = @AccountID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@AccountID", accountID);
+
+            using (SqlDataReader reader = command.ExecuteReader())
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@AccountID", accountID);
-
-                try
+                if (reader.Read())
                 {
-                    connection.Open();
-                    int count = (int)command.ExecuteScalar();
-                    return count > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                    return false;
+                    decimal balance = reader.GetDecimal(0);
+                    decimal transferLimit = reader.GetDecimal(1);
+                    return balance >= amount && transferLimit >= amount;
                 }
             }
+
+            return false;
         }
     }
 }

@@ -26,7 +26,8 @@ namespace QBankingSystemv2._0.ValidationClasses
         public DestinationAccountValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Please select a destination account.");
+                .NotEmpty().WithMessage("Please select a destination account.")
+                .Matches(@"^\d{9}$").WithMessage("Destination account must be a 9-digit number.");
         }
     }
 }

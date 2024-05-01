@@ -75,8 +75,8 @@ namespace QBankingSystemv2._0.Forms
                 withdrawalLimitValidationResult.IsValid && transferLimitValidationResult.IsValid)
             {
                 string accountName = accountNameTextBox.Text;
-                string accountType = accountTypeComboBox.SelectedItem.ToString();
-                string currency = currencyComboBox.SelectedItem.ToString();
+                string accountType = accountTypeComboBox.Text;
+                string currency = currencyComboBox.Text;
                 decimal initialBalance = decimal.Parse(initialBalanceTextBox.Text);
                 decimal depositLimit = decimal.Parse(depositLimitTextBox.Text);
                 decimal withdrawalLimit = decimal.Parse(withdrawalLimitTextBox.Text);

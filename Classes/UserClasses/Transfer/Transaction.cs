@@ -14,7 +14,7 @@ namespace QBankingSystemv2._0.Classes.Transactions
 
         public Transaction(string sourceAccountID, string destinationAccountID, string transactionType, decimal amount, string description)
         {
-            TransactionID = GenerateTransactionID();
+            TransactionID = GenerateTransactionID().ToString();
             SourceAccountID = sourceAccountID;
             DestinationAccountID = destinationAccountID;
             TransactionType = transactionType;
@@ -23,9 +23,10 @@ namespace QBankingSystemv2._0.Classes.Transactions
             Description = description;
         }
 
-        private string GenerateTransactionID()
+        private int GenerateTransactionID()
         {
-            return Guid.NewGuid().ToString();
+            Random random = new Random();
+            return random.Next();
         }
     }
 }

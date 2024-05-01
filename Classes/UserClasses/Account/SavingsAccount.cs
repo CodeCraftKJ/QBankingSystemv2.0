@@ -3,7 +3,7 @@ using System;
 
 namespace QBankingSystemv2._0.Classes.Accounts
 {
-    public class CheckingAccount : IAccount
+    public class SavingsAccount : IAccount
     {
         public string AccountName { get; private set; }
         public string AccountID { get; private set; }
@@ -16,11 +16,11 @@ namespace QBankingSystemv2._0.Classes.Accounts
         public DateTime CreatedAt { get; private set; }
         public string Status { get; private set; }
 
-        public CheckingAccount(string accountName,string accountID, string currency, decimal balance, decimal depositLimit, decimal withdrawalLimit, decimal transferLimit)
+        public SavingsAccount(string accountName,string accountID, string currency, decimal balance, decimal depositLimit, decimal withdrawalLimit, decimal transferLimit)
         {
             AccountName = accountName;
             AccountID = accountID;
-            AccountType = "Checking Account";
+            AccountType = "Savings Account";
             Currency = currency;
             Balance = balance;
             DepositLimit = depositLimit;
@@ -37,27 +37,12 @@ namespace QBankingSystemv2._0.Classes.Accounts
 
         public void Withdraw(decimal amount)
         {
-            if (amount <= WithdrawalLimit && amount <= Balance)
-            {
-                Balance -= amount;
-            }
-            else
-            {
-                throw new InvalidOperationException("Withdrawal amount exceeds limits or insufficient balance.");
-            }
+            Balance -= amount;
         }
 
         public void Transfer(decimal amount, string recipientAccountID)
         {
-            if (amount <= TransferLimit && amount <= Balance)
-            {
-                Balance -= amount;
-                // Logic to transfer amount to recipient account
-            }
-            else
-            {
-                throw new InvalidOperationException("Transfer amount exceeds limits or insufficient balance.");
-            }
+             Balance -= amount;
         }
     }
 }
