@@ -56,5 +56,10 @@ namespace QBankingSystemv2._0.Forms
         {
 
         }
+
+        private void G_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
