@@ -61,9 +61,9 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
             }
         }
 
-        public static List<Transaction> GetAccountTransfers(string accountID)
+        public static List<(Transaction, bool)> GetAccountTransfers(string accountID)
         {
-            List<Transaction> accountTransfers = new List<Transaction>();
+            List<(Transaction, bool)> accountTransfers = new List<(Transaction, bool)>();
 
             string connectionString = ConfigurationManager.GetConnectionString();
 
@@ -79,15 +79,20 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
-                    while (reader.Read()) {
+                    while (reader.Read())
+                    {
+                        string sourceAccountID = reader["SourceAccountID"].ToString();
+                        string destinationAccountID = reader["DestinationAccountID"].ToString();
+
+                        bool isOutgoing = sourceAccountID == accountID;
                         Transaction transaction = new Transaction(
-                            reader["SourceAccountID"].ToString(),
-                            reader["DestinationAccountID"].ToString(),
+                            sourceAccountID,
+                            destinationAccountID,
                             reader["TransactionType"].ToString(),
                             Convert.ToDecimal(reader["Amount"]),
                             reader["Description"].ToString()
                         );
-                        accountTransfers.Add(transaction);
+                        accountTransfers.Add((transaction, isOutgoing));
                     }
 
                     reader.Close();
@@ -100,7 +105,6 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
 
             return accountTransfers;
         }
-
 
         private static bool IsUserAccount(SqlConnection connection, int userID, string accountID)
         {

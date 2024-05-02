@@ -39,6 +39,8 @@ namespace QBankingSystemv2._0.Forms
             this.Balance = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.AccountName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LastBalance = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TransfersList
@@ -49,9 +51,9 @@ namespace QBankingSystemv2._0.Forms
             this.TransfersList.ForeColor = System.Drawing.Color.ForestGreen;
             this.TransfersList.FormattingEnabled = true;
             this.TransfersList.ItemHeight = 26;
-            this.TransfersList.Location = new System.Drawing.Point(12, 227);
+            this.TransfersList.Location = new System.Drawing.Point(12, 194);
             this.TransfersList.Name = "TransfersList";
-            this.TransfersList.Size = new System.Drawing.Size(601, 264);
+            this.TransfersList.Size = new System.Drawing.Size(626, 420);
             this.TransfersList.TabIndex = 67;
             // 
             // AccountBox
@@ -72,9 +74,9 @@ namespace QBankingSystemv2._0.Forms
             this.TransfersBtn.BackColor = System.Drawing.Color.Azure;
             this.TransfersBtn.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TransfersBtn.ForeColor = System.Drawing.Color.ForestGreen;
-            this.TransfersBtn.Location = new System.Drawing.Point(159, 495);
+            this.TransfersBtn.Location = new System.Drawing.Point(13, 696);
             this.TransfersBtn.Name = "TransfersBtn";
-            this.TransfersBtn.Size = new System.Drawing.Size(158, 58);
+            this.TransfersBtn.Size = new System.Drawing.Size(141, 48);
             this.TransfersBtn.TabIndex = 70;
             this.TransfersBtn.Text = "Transfers";
             this.TransfersBtn.UseVisualStyleBackColor = false;
@@ -88,9 +90,9 @@ namespace QBankingSystemv2._0.Forms
             this.LoansBtn.BackColor = System.Drawing.Color.Azure;
             this.LoansBtn.Font = new System.Drawing.Font("Stencil", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LoansBtn.ForeColor = System.Drawing.Color.ForestGreen;
-            this.LoansBtn.Location = new System.Drawing.Point(154, 559);
+            this.LoansBtn.Location = new System.Drawing.Point(160, 696);
             this.LoansBtn.Name = "LoansBtn";
-            this.LoansBtn.Size = new System.Drawing.Size(163, 53);
+            this.LoansBtn.Size = new System.Drawing.Size(141, 48);
             this.LoansBtn.TabIndex = 71;
             this.LoansBtn.Text = "Loans";
             this.LoansBtn.UseVisualStyleBackColor = false;
@@ -104,9 +106,9 @@ namespace QBankingSystemv2._0.Forms
             this.HistoryToFile.BackColor = System.Drawing.Color.Azure;
             this.HistoryToFile.Font = new System.Drawing.Font("Stencil", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HistoryToFile.ForeColor = System.Drawing.Color.ForestGreen;
-            this.HistoryToFile.Location = new System.Drawing.Point(323, 559);
+            this.HistoryToFile.Location = new System.Drawing.Point(307, 696);
             this.HistoryToFile.Name = "HistoryToFile";
-            this.HistoryToFile.Size = new System.Drawing.Size(163, 53);
+            this.HistoryToFile.Size = new System.Drawing.Size(188, 48);
             this.HistoryToFile.TabIndex = 72;
             this.HistoryToFile.Text = "History To File";
             this.HistoryToFile.UseVisualStyleBackColor = false;
@@ -120,9 +122,9 @@ namespace QBankingSystemv2._0.Forms
             this.TransfersFromFileBtn.BackColor = System.Drawing.Color.Azure;
             this.TransfersFromFileBtn.Font = new System.Drawing.Font("Stencil", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TransfersFromFileBtn.ForeColor = System.Drawing.Color.ForestGreen;
-            this.TransfersFromFileBtn.Location = new System.Drawing.Point(323, 496);
+            this.TransfersFromFileBtn.Location = new System.Drawing.Point(501, 696);
             this.TransfersFromFileBtn.Name = "TransfersFromFileBtn";
-            this.TransfersFromFileBtn.Size = new System.Drawing.Size(163, 58);
+            this.TransfersFromFileBtn.Size = new System.Drawing.Size(138, 48);
             this.TransfersFromFileBtn.TabIndex = 73;
             this.TransfersFromFileBtn.Text = "Transfers from File";
             this.TransfersFromFileBtn.UseVisualStyleBackColor = false;
@@ -133,9 +135,9 @@ namespace QBankingSystemv2._0.Forms
             this.Balance.Enabled = false;
             this.Balance.Font = new System.Drawing.Font("Stencil", 13.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Balance.ForeColor = System.Drawing.Color.Green;
-            this.Balance.Location = new System.Drawing.Point(12, 187);
+            this.Balance.Location = new System.Drawing.Point(13, 153);
             this.Balance.Name = "Balance";
-            this.Balance.Size = new System.Drawing.Size(601, 33);
+            this.Balance.Size = new System.Drawing.Size(626, 33);
             this.Balance.TabIndex = 74;
             // 
             // label1
@@ -143,7 +145,7 @@ namespace QBankingSystemv2._0.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Stencil", 8.4F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(12, 164);
+            this.label1.Location = new System.Drawing.Point(13, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 75;
@@ -158,7 +160,27 @@ namespace QBankingSystemv2._0.Forms
             this.AccountName.Name = "AccountName";
             this.AccountName.Size = new System.Drawing.Size(470, 33);
             this.AccountName.TabIndex = 76;
-            this.AccountName.TextChanged += new System.EventHandler(this.G_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Stencil", 8.4F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Green;
+            this.label2.Location = new System.Drawing.Point(13, 629);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(260, 17);
+            this.label2.TabIndex = 78;
+            this.label2.Text = "Balance from last transfers:";
+            // 
+            // LastBalance
+            // 
+            this.LastBalance.Enabled = false;
+            this.LastBalance.Font = new System.Drawing.Font("Stencil", 13.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LastBalance.ForeColor = System.Drawing.Color.Green;
+            this.LastBalance.Location = new System.Drawing.Point(12, 647);
+            this.LastBalance.Name = "LastBalance";
+            this.LastBalance.Size = new System.Drawing.Size(626, 33);
+            this.LastBalance.TabIndex = 77;
             // 
             // Account
             // 
@@ -166,7 +188,9 @@ namespace QBankingSystemv2._0.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(625, 624);
+            this.ClientSize = new System.Drawing.Size(650, 745);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LastBalance);
             this.Controls.Add(this.AccountName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Balance);
@@ -195,5 +219,7 @@ namespace QBankingSystemv2._0.Forms
         private System.Windows.Forms.TextBox Balance;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox AccountName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox LastBalance;
     }
 }
