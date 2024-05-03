@@ -1,14 +1,17 @@
-﻿using QBankingSystemv2._0.Classes.DatabaseManager;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
+using QBankingSystemv2._0.Classes.DatabaseManager;
 using QBankingSystemv2._0.Classes.Transactions;
 using QBankingSystemv2._0.Interfaces;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace QBankingSystemv2._0.Forms
 {
     public partial class Account : Form
     {
         private IAccount _account;
+        private List<(Transaction, bool)> _accountTransfers;
 
         public Account(IAccount account)
         {
@@ -16,18 +19,18 @@ namespace QBankingSystemv2._0.Forms
             _account = account;
             AccountBox.Text = account.AccountID;
             AccountName.Text = account.AccountName;
-            LoadTransfers(); 
+            LoadTransfers();
         }
 
         private void LoadTransfers()
         {
             TransfersList.Items.Clear();
-            List<(Transaction, bool)> accountTransfers = TransactionManager.GetAccountTransfers(_account.AccountID);
-            if (accountTransfers != null && accountTransfers.Count > 0)
+            _accountTransfers = TransactionManager.GetAccountTransfers(_account.AccountID);
+            if (_accountTransfers != null && _accountTransfers.Count > 0)
             {
                 decimal totalBalance = 0;
 
-                foreach (var transferTuple in accountTransfers)
+                foreach (var transferTuple in _accountTransfers)
                 {
                     Transaction transaction = transferTuple.Item1;
                     bool isOutgoing = transferTuple.Item2;
@@ -50,24 +53,50 @@ namespace QBankingSystemv2._0.Forms
             }
         }
 
+        private void HistoryToFile_Click(object sender, EventArgs e)
+        {
+            if (_accountTransfers == null || _accountTransfers.Count == 0)
+            {
+                MessageBox.Show("No transfers to save.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            string fileName = $"TransfersHistory_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+            string downloadFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads";
+            string filePath = Path.Combine(downloadFolderPath, fileName);
 
-        private void TransfersBtn_Click(object sender, System.EventArgs e)
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (var transferTuple in _accountTransfers)
+                    {
+                        Transaction transaction = transferTuple.Item1;
+                        bool isOutgoing = transferTuple.Item2;
+                        string transferType = isOutgoing ? "OUTGOING" : "INCOMING";
+                        string transferDirection = isOutgoing ? "TO: " : "FROM: ";
+
+                        string transferInfo = $"Transaction Type: {transferType}, Amount: {transaction.Amount}, Date: {transaction.TransactionDate}," +
+                            $" {transferDirection} {(isOutgoing ? transaction.DestinationAccountID : transaction.SourceAccountID)}";
+
+                        writer.WriteLine(transferInfo);
+                    }
+                }
+
+                MessageBox.Show($"Sved to: {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while saving the history: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TransfersFromFileBtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void TransfersFromFileBtn_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void LoansBtn_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void HistoryToFile_Click(object sender, System.EventArgs e)
+        private void TransfersBtn_Click(object sender, EventArgs e)
         {
 
         }
