@@ -17,6 +17,9 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                 {
                     await connection.OpenAsync();
 
+
+
+
                     foreach (string tableName in requiredTables)
                     {
                         string query = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{tableName}'";
