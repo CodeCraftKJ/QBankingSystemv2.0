@@ -11,6 +11,7 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
             string connectionString = ConfigurationManager.GetConnectionString();
             string[] requiredTables = { "QPayUsers", "QPayHarshedPasswords" };
 
+
             try
             {
                 using (SqlConnection connection = new(connectionString))
