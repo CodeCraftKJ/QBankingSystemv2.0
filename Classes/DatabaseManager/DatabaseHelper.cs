@@ -10,17 +10,11 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
         {
             string connectionString = ConfigurationManager.GetConnectionString();
             string[] requiredTables = { "QPayUsers", "QPayHarshedPasswords" };
-
-
             try
             {
                 using (SqlConnection connection = new(connectionString))
                 {
                     await connection.OpenAsync();
-
-
-
-
                     foreach (string tableName in requiredTables)
                     {
                         string query = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{tableName}'";

@@ -96,6 +96,7 @@ namespace QBankingSystemv2._0.Forms
             this.LoansBtn.TabIndex = 71;
             this.LoansBtn.Text = "Loans";
             this.LoansBtn.UseVisualStyleBackColor = false;
+            this.LoansBtn.Click += new System.EventHandler(this.LoansBtn_Click);
             // 
             // HistoryToFile
             // 

@@ -93,10 +93,49 @@ namespace QBankingSystemv2._0.Forms
 
         private void TransfersFromFileBtn_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.Title = "Select a file with transfer information";
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                try
+                {
+                    string[] lines = File.ReadAllLines(filePath);
+
+                    foreach (string line in lines)
+                    {
+                        string[] parts = line.Split(',');
+                        string sourceAccountID = parts[0].Split(':')[1].Trim();
+                        string destinationAccountID = parts[1].Split(':')[1].Trim();
+                        decimal amount = decimal.Parse(parts[2].Split(':')[1].Trim());
+                        DateTime transactionDate = DateTime.Parse(parts[3].Split(':')[1].Trim());
+                        string description = parts[4].Split(':')[1].Trim();
+
+                        Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, "Transfer", amount, description);
+                        TransactionManager.ExecuteTransaction(transaction, CurrentUser.UserID);
+                    }
+                    LoadTransfers();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while processing transfers from the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
+
+
         private void TransfersBtn_Click(object sender, EventArgs e)
+        {
+            CreateTransferForm transferForm = new();
+            transferForm.FormClosed += (s, args) => LoadTransfers();
+            transferForm.Show();
+        }
+
+        private void LoansBtn_Click(object sender, EventArgs e)
         {
 
         }
