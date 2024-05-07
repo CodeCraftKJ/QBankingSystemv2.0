@@ -137,7 +137,7 @@ namespace QBankingSystemv2._0.Forms
 
         private void LoansBtn_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
     }
 }
