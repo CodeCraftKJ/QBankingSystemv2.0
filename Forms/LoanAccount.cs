@@ -27,5 +27,15 @@ namespace QBankingSystemv2._0.Forms
         {
             // TODO: Implement loan calculator
         }
+
+        private void loanInterestRateTrackBar_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loanAmountTrackBar_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
 }
