@@ -79,7 +79,6 @@
             this.loanAmountTrackBar.Name = "loanAmountTrackBar";
             this.loanAmountTrackBar.Size = new System.Drawing.Size(264, 56);
             this.loanAmountTrackBar.TabIndex = 4;
-            this.loanAmountTrackBar.Scroll += new System.EventHandler(this.loanAmountTrackBar_Scroll);
             // 
             // loanInterestRateTrackBar
             // 
@@ -87,7 +86,6 @@
             this.loanInterestRateTrackBar.Name = "loanInterestRateTrackBar";
             this.loanInterestRateTrackBar.Size = new System.Drawing.Size(264, 56);
             this.loanInterestRateTrackBar.TabIndex = 5;
-            this.loanInterestRateTrackBar.Scroll += new System.EventHandler(this.loanInterestRateTrackBar_Scroll);
             // 
             // loanAmountValueLabel
             // 
@@ -150,6 +148,7 @@
             this.repayLoanButton.TabIndex = 12;
             this.repayLoanButton.Text = "Repay Loan";
             this.repayLoanButton.UseVisualStyleBackColor = true;
+            this.repayLoanButton.Click += new System.EventHandler(this.repayLoanButton_Click);
             // 
             // LoanAccount
             // 

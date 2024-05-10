@@ -137,8 +137,8 @@ namespace QBankingSystemv2._0.Forms
 
         private void LoansBtn_Click(object sender, EventArgs e)
         {
-            LoanAccount loanAccountForm = new LoanAccount(1);
-            loanAccountForm.ShowDialog();
+            LoanAccount loanAccountForm = new LoanAccount();
+            loanAccountForm.Show();
         }
 
     }
