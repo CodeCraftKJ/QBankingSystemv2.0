@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QBankingSystemv2._0.Classes.DatabaseManager;
+using QBankingSystemv2._0.Classes.Transactions;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -23,18 +25,45 @@ namespace QBankingSystemv2._0.Forms
 
         private void takeLoanButton_Click(object sender, EventArgs e)
         {
-            // Sprawdź, czy użytkownik ma już konto pożyczkowe, jeśli nie, utwórz je
-            if (!HasLoanAccount())
-            {
-                CreateLoanAccount();
-            }
+            // Tworzymy nowe konto pożyczkowe dla użytkownika
+            CreateLoanAccount();
 
-            // Tutaj umieść kod na zaciągnięcie pożyczki z wykorzystaniem TransactionManager.ExecuteTransaction
+            // Pobierz adres konta, na które ma być przelana pożyczka, wpisany przez użytkownika
+            string toAccount = toAccount1.Text;
+
+            // Zaciągnij pożyczkę przez wykonanie transferu na konto pożyczkowe
+            decimal loanAmount = loanAmountTrackBar.Value;
+            decimal loanInterestRate = loanInterestRateTrackBar.Value;
+
+            // Tutaj wywołaj metodę do wykonania transferu na konto pożyczkowe
+            // Zakładam, że masz odpowiednią metodę w TransactionManager, która wykonuje transfer na konto docelowe
+            // Wartość kwoty pożyczki zostanie przelana na konto pożyczkowe użytkownika
+            TransactionManager.ExecuteTransaction(new Transaction(toAccount, "Loan Account", "Loan", loanAmount, "Loan taken"), CurrentUser.UserID);
         }
 
         private void repayLoanButton_Click(object sender, EventArgs e)
         {
-            // Tutaj umieść kod na spłacenie pożyczki z wykorzystaniem TransactionManager.ExecuteTransaction
+            // Sprawdź, czy użytkownik ma konto pożyczkowe, jeśli nie, wyświetl komunikat
+            if (!HasLoanAccount())
+            {
+                MessageBox.Show("You don't have a loan account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private decimal GetRemainingBalance()
+        {
+            // Pobierz pozostałe saldo pożyczki z bazy danych
+            string connectionString = ConfigurationManager.GetConnectionString();
+            string query = "SELECT RemainingBalance FROM QPayLoans WHERE UserID = @UserID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@UserID", CurrentUser.UserID);
+                connection.Open();
+                return (decimal)command.ExecuteScalar();
+            }
         }
 
         private void UpdateLoanAmountLabel()
@@ -49,7 +78,6 @@ namespace QBankingSystemv2._0.Forms
 
         private bool HasLoanAccount()
         {
-            // Sprawdź, czy użytkownik ma już konto pożyczkowe
             string connectionString = ConfigurationManager.GetConnectionString();
             string query = "SELECT COUNT(*) FROM QPayLoans WHERE UserID = @UserID";
 

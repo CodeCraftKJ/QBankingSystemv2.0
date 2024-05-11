@@ -41,13 +41,17 @@
             this.remainingBalanceTextBox = new System.Windows.Forms.TextBox();
             this.remainingBalanceLabel = new System.Windows.Forms.Label();
             this.repayLoanButton = new System.Windows.Forms.Button();
+            this.textLoanAccount = new System.Windows.Forms.TextBox();
+            this.labelSendLoanTo = new System.Windows.Forms.Label();
+            this.toAccount1 = new System.Windows.Forms.TextBox();
+            this.ToAccount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loanAmountTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanInterestRateTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // takeLoanButton
             // 
-            this.takeLoanButton.Location = new System.Drawing.Point(34, 243);
+            this.takeLoanButton.Location = new System.Drawing.Point(34, 291);
             this.takeLoanButton.Name = "takeLoanButton";
             this.takeLoanButton.Size = new System.Drawing.Size(120, 34);
             this.takeLoanButton.TabIndex = 0;
@@ -58,7 +62,7 @@
             // loanAmountLabel
             // 
             this.loanAmountLabel.AutoSize = true;
-            this.loanAmountLabel.Location = new System.Drawing.Point(34, 41);
+            this.loanAmountLabel.Location = new System.Drawing.Point(34, 9);
             this.loanAmountLabel.Name = "loanAmountLabel";
             this.loanAmountLabel.Size = new System.Drawing.Size(101, 20);
             this.loanAmountLabel.TabIndex = 2;
@@ -67,7 +71,7 @@
             // loanInterestRateLabel
             // 
             this.loanInterestRateLabel.AutoSize = true;
-            this.loanInterestRateLabel.Location = new System.Drawing.Point(34, 107);
+            this.loanInterestRateLabel.Location = new System.Drawing.Point(34, 96);
             this.loanInterestRateLabel.Name = "loanInterestRateLabel";
             this.loanInterestRateLabel.Size = new System.Drawing.Size(121, 20);
             this.loanInterestRateLabel.TabIndex = 3;
@@ -75,7 +79,7 @@
             // 
             // loanAmountTrackBar
             // 
-            this.loanAmountTrackBar.Location = new System.Drawing.Point(34, 75);
+            this.loanAmountTrackBar.Location = new System.Drawing.Point(34, 40);
             this.loanAmountTrackBar.Name = "loanAmountTrackBar";
             this.loanAmountTrackBar.Size = new System.Drawing.Size(264, 56);
             this.loanAmountTrackBar.TabIndex = 4;
@@ -90,7 +94,7 @@
             // loanAmountValueLabel
             // 
             this.loanAmountValueLabel.AutoSize = true;
-            this.loanAmountValueLabel.Location = new System.Drawing.Point(308, 75);
+            this.loanAmountValueLabel.Location = new System.Drawing.Point(308, 41);
             this.loanAmountValueLabel.Name = "loanAmountValueLabel";
             this.loanAmountValueLabel.Size = new System.Drawing.Size(36, 20);
             this.loanAmountValueLabel.TabIndex = 6;
@@ -108,7 +112,7 @@
             // loanCostLabel
             // 
             this.loanCostLabel.AutoSize = true;
-            this.loanCostLabel.Location = new System.Drawing.Point(34, 207);
+            this.loanCostLabel.Location = new System.Drawing.Point(34, 182);
             this.loanCostLabel.Name = "loanCostLabel";
             this.loanCostLabel.Size = new System.Drawing.Size(77, 20);
             this.loanCostLabel.TabIndex = 8;
@@ -125,7 +129,7 @@
             // 
             // remainingBalanceTextBox
             // 
-            this.remainingBalanceTextBox.Location = new System.Drawing.Point(128, 204);
+            this.remainingBalanceTextBox.Location = new System.Drawing.Point(128, 179);
             this.remainingBalanceTextBox.Name = "remainingBalanceTextBox";
             this.remainingBalanceTextBox.ReadOnly = true;
             this.remainingBalanceTextBox.Size = new System.Drawing.Size(170, 27);
@@ -142,7 +146,7 @@
             // 
             // repayLoanButton
             // 
-            this.repayLoanButton.Location = new System.Drawing.Point(160, 243);
+            this.repayLoanButton.Location = new System.Drawing.Point(201, 288);
             this.repayLoanButton.Name = "repayLoanButton";
             this.repayLoanButton.Size = new System.Drawing.Size(120, 34);
             this.repayLoanButton.TabIndex = 12;
@@ -150,11 +154,48 @@
             this.repayLoanButton.UseVisualStyleBackColor = true;
             this.repayLoanButton.Click += new System.EventHandler(this.repayLoanButton_Click);
             // 
+            // textLoanAccount
+            // 
+            this.textLoanAccount.Location = new System.Drawing.Point(128, 215);
+            this.textLoanAccount.Name = "textLoanAccount";
+            this.textLoanAccount.ReadOnly = true;
+            this.textLoanAccount.Size = new System.Drawing.Size(170, 27);
+            this.textLoanAccount.TabIndex = 14;
+            // 
+            // labelSendLoanTo
+            // 
+            this.labelSendLoanTo.AutoSize = true;
+            this.labelSendLoanTo.Location = new System.Drawing.Point(34, 218);
+            this.labelSendLoanTo.Name = "labelSendLoanTo";
+            this.labelSendLoanTo.Size = new System.Drawing.Size(95, 20);
+            this.labelSendLoanTo.TabIndex = 13;
+            this.labelSendLoanTo.Text = "LoanAccount";
+            // 
+            // toAccount1
+            // 
+            this.toAccount1.Location = new System.Drawing.Point(128, 254);
+            this.toAccount1.Name = "toAccount1";
+            this.toAccount1.Size = new System.Drawing.Size(170, 27);
+            this.toAccount1.TabIndex = 16;
+            // 
+            // ToAccount
+            // 
+            this.ToAccount.AutoSize = true;
+            this.ToAccount.Location = new System.Drawing.Point(34, 257);
+            this.ToAccount.Name = "ToAccount";
+            this.ToAccount.Size = new System.Drawing.Size(79, 20);
+            this.ToAccount.TabIndex = 15;
+            this.ToAccount.Text = "ToAccount";
+            // 
             // LoanAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 333);
+            this.Controls.Add(this.toAccount1);
+            this.Controls.Add(this.ToAccount);
+            this.Controls.Add(this.textLoanAccount);
+            this.Controls.Add(this.labelSendLoanTo);
             this.Controls.Add(this.repayLoanButton);
             this.Controls.Add(this.remainingBalanceLabel);
             this.Controls.Add(this.remainingBalanceTextBox);
@@ -192,5 +233,9 @@
         private System.Windows.Forms.TextBox remainingBalanceTextBox;
         private System.Windows.Forms.Label remainingBalanceLabel;
         private System.Windows.Forms.Button repayLoanButton;
+        private System.Windows.Forms.TextBox textLoanAccount;
+        private System.Windows.Forms.Label labelSendLoanTo;
+        private System.Windows.Forms.TextBox toAccount1;
+        private System.Windows.Forms.Label ToAccount;
     }
 }

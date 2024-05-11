@@ -66,6 +66,8 @@ public static class AccountRegistrationManager
                 return "1";
             case "Checking Account":
                 return "2";
+            case "Loan Account":
+                return "9";
             default:
                 return "0";
         }
