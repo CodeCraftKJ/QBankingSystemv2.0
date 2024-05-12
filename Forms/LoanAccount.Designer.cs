@@ -34,8 +34,6 @@
             this.loanInterestRateLabel = new System.Windows.Forms.Label();
             this.loanAmountTrackBar = new System.Windows.Forms.TrackBar();
             this.loanInterestRateTrackBar = new System.Windows.Forms.TrackBar();
-            this.loanAmountValueLabel = new System.Windows.Forms.Label();
-            this.loanInterestRateValueLabel = new System.Windows.Forms.Label();
             this.loanCostLabel = new System.Windows.Forms.Label();
             this.transferList = new System.Windows.Forms.ListBox();
             this.remainingBalanceTextBox = new System.Windows.Forms.TextBox();
@@ -45,6 +43,8 @@
             this.labelSendLoanTo = new System.Windows.Forms.Label();
             this.toAccount1 = new System.Windows.Forms.TextBox();
             this.ToAccount = new System.Windows.Forms.Label();
+            this.loanAmountValueLabel = new System.Windows.Forms.Label();
+            this.loanInterestRateValueLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loanAmountTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanInterestRateTrackBar)).BeginInit();
             this.SuspendLayout();
@@ -90,24 +90,7 @@
             this.loanInterestRateTrackBar.Name = "loanInterestRateTrackBar";
             this.loanInterestRateTrackBar.Size = new System.Drawing.Size(264, 56);
             this.loanInterestRateTrackBar.TabIndex = 5;
-            // 
-            // loanAmountValueLabel
-            // 
-            this.loanAmountValueLabel.AutoSize = true;
-            this.loanAmountValueLabel.Location = new System.Drawing.Point(308, 41);
-            this.loanAmountValueLabel.Name = "loanAmountValueLabel";
-            this.loanAmountValueLabel.Size = new System.Drawing.Size(36, 20);
-            this.loanAmountValueLabel.TabIndex = 6;
-            this.loanAmountValueLabel.Text = "0.00";
-            // 
-            // loanInterestRateValueLabel
-            // 
-            this.loanInterestRateValueLabel.AutoSize = true;
-            this.loanInterestRateValueLabel.Location = new System.Drawing.Point(308, 130);
-            this.loanInterestRateValueLabel.Name = "loanInterestRateValueLabel";
-            this.loanInterestRateValueLabel.Size = new System.Drawing.Size(36, 20);
-            this.loanInterestRateValueLabel.TabIndex = 7;
-            this.loanInterestRateValueLabel.Text = "0.00";
+            this.loanInterestRateTrackBar.Value = 4;
             // 
             // loanCostLabel
             // 
@@ -187,6 +170,25 @@
             this.ToAccount.TabIndex = 15;
             this.ToAccount.Text = "ToAccount";
             // 
+            // loanAmountValueLabel
+            // 
+            this.loanAmountValueLabel.AutoSize = true;
+            this.loanAmountValueLabel.Location = new System.Drawing.Point(141, 9);
+            this.loanAmountValueLabel.Name = "loanAmountValueLabel";
+            this.loanAmountValueLabel.Size = new System.Drawing.Size(36, 20);
+            this.loanAmountValueLabel.TabIndex = 6;
+            this.loanAmountValueLabel.Text = "0.00";
+            this.loanAmountValueLabel.Click += new System.EventHandler(this.loanAmountValueLabel_Click);
+            // 
+            // loanInterestRateValueLabel
+            // 
+            this.loanInterestRateValueLabel.AutoSize = true;
+            this.loanInterestRateValueLabel.Location = new System.Drawing.Point(161, 96);
+            this.loanInterestRateValueLabel.Name = "loanInterestRateValueLabel";
+            this.loanInterestRateValueLabel.Size = new System.Drawing.Size(36, 20);
+            this.loanInterestRateValueLabel.TabIndex = 7;
+            this.loanInterestRateValueLabel.Text = "0.00";
+            // 
             // LoanAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -226,8 +228,6 @@
         private System.Windows.Forms.Label loanInterestRateLabel;
         private System.Windows.Forms.TrackBar loanAmountTrackBar;
         private System.Windows.Forms.TrackBar loanInterestRateTrackBar;
-        private System.Windows.Forms.Label loanAmountValueLabel;
-        private System.Windows.Forms.Label loanInterestRateValueLabel;
         private System.Windows.Forms.Label loanCostLabel;
         private System.Windows.Forms.ListBox transferList;
         private System.Windows.Forms.TextBox remainingBalanceTextBox;
@@ -237,5 +237,7 @@
         private System.Windows.Forms.Label labelSendLoanTo;
         private System.Windows.Forms.TextBox toAccount1;
         private System.Windows.Forms.Label ToAccount;
+        private System.Windows.Forms.Label loanAmountValueLabel;
+        private System.Windows.Forms.Label loanInterestRateValueLabel;
     }
 }
