@@ -79,11 +79,11 @@ namespace QBankingSystemv2._0.Forms
                         string transferInfo = $"Transaction Type: {transferType}, Amount: {transaction.Amount}, Date: {transaction.TransactionDate}," +
                             $" {transferDirection} {(isOutgoing ? transaction.DestinationAccountID : transaction.SourceAccountID)}";
 
-                        writer.WriteLine(transferInfo);
+                        writer.WriteLine($"{transferInfo} [OUTPUT]");
                     }
                 }
 
-                MessageBox.Show($"Sved to: {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Saved to: {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -111,8 +111,7 @@ namespace QBankingSystemv2._0.Forms
                         string sourceAccountID = parts[0].Split(':')[1].Trim();
                         string destinationAccountID = parts[1].Split(':')[1].Trim();
                         decimal amount = decimal.Parse(parts[2].Split(':')[1].Trim());
-                        DateTime transactionDate = DateTime.Parse(parts[3].Split(':')[1].Trim());
-                        string description = parts[4].Split(':')[1].Trim();
+                        string description = parts[3].Split(':')[1].Trim();
 
                         Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, "Transfer", amount, description, DateTime.Now);
                         TransactionManager.ExecuteTransaction(transaction, CurrentUser.UserID);
@@ -125,8 +124,6 @@ namespace QBankingSystemv2._0.Forms
                 }
             }
         }
-
-
 
         private void TransfersBtn_Click(object sender, EventArgs e)
         {

@@ -48,7 +48,7 @@ namespace QBankingSystemv2._0.Forms
                 decimal amount = decimal.Parse(amountTextBox.Text);
                 string description = descriptionTextBox.Text;
 
-                Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, transactionType, amount, description);
+                Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, transactionType, amount, description, DateTime.Now);
 
                 TransactionManager.ExecuteTransaction(transaction,CurrentUser.UserID);
             }

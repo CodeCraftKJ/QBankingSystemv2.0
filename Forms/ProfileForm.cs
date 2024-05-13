@@ -62,7 +62,7 @@ namespace QBankingSystemv2._0.Forms
             string selectedItem = BankAccounts.SelectedItem as string;
             if (selectedItem != null)
             {
-                string[] parts = selectedItem.Split(' ');
+                string[] parts = selectedItem.Split("-   -");
                 if (parts.Length == 2)
                 {
                     string accountName = parts[0];
@@ -96,7 +96,7 @@ namespace QBankingSystemv2._0.Forms
             BankAccounts.Items.Clear();
             foreach (IAccount account in userAccounts)
             {
-                BankAccounts.Items.Add(account.AccountName+" "+account.AccountID);
+                BankAccounts.Items.Add(account.AccountName+"-   -"+account.AccountID);
             }
         }
 
