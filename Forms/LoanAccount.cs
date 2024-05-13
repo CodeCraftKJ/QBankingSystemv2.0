@@ -24,9 +24,9 @@ namespace QBankingSystemv2._0.Forms
 
         private void takeLoanButton_Click(object sender, EventArgs e)
         {
-            int loanAccountID = CreateLoanAccount();
+            int loanAccountID = CreateLoanAccount(TxtBoxCurrency.Text);
             string toAccount = toAccount1.Text;
-            CreateNewLoan(loanAccountID);
+            CreateNewLoan(loanAccountID, TxtBoxCurrency.Text);
             decimal loanAmount = loanAmountTrackBar.Value;
             decimal loanInterestRate = loanInterestRateTrackBar.Value;
             TransactionManager.ExecuteTransaction(new Transaction(loanAccountID.ToString(), toAccount, "Loan", loanAmount, "Loan taken"), CurrentUser.UserID);
@@ -81,9 +81,10 @@ namespace QBankingSystemv2._0.Forms
             }
         }
 
-        private int CreateLoanAccount()
+
+        private int CreateLoanAccount(string currency)
         {
-            AccountRegistrationManager.RegisterAccount("Loan Account", "Loan Account", "USD", loanAmount, 0, 0, 0, userID);
+            AccountRegistrationManager.RegisterAccount("Loan Account", "Loan Account", currency, loanAmount, 9999999, 9999999, 9999999, userID);
             string connectionString = ConfigurationManager.GetConnectionString();
             string query = "SELECT AccountID FROM QPayAccounts WHERE UserID = @UserID AND AccountType = 'Loan Account'";
 
@@ -96,7 +97,7 @@ namespace QBankingSystemv2._0.Forms
             }
         }
 
-        private void CreateNewLoan(int loanAccountID)
+        private void CreateNewLoan(int loanAccountID, string currency)
         {
             string connectionString = ConfigurationManager.GetConnectionString();
             string insertQuery = "INSERT INTO QPayLoans (UserID, LoanAmount, InterestRate, RemainingBalance, LoanAccountID) VALUES (@UserID, @LoanAmount, @InterestRate, 0, @LoanAccountID)";
@@ -112,7 +113,6 @@ namespace QBankingSystemv2._0.Forms
                 command.ExecuteNonQuery();
             }
         }
-
         private void RefreshLoanList()
         {
             transferList.Items.Clear();
@@ -135,9 +135,18 @@ namespace QBankingSystemv2._0.Forms
             }
         }
 
-        private void loanAmountValueLabel_Click(object sender, EventArgs e)
+        private void loanAmountTrackBar_Scroll(object sender, EventArgs e)
         {
-
+            loanAmount = loanAmountTrackBar.Value;
+            loanAmountLabel.Text = $"Loan Amount: {loanAmount:C}";
         }
+
+
+        private void loanInterestRateTrackBar_Scroll(object sender, EventArgs e)
+        {
+            loanInterestRate = loanInterestRateTrackBar.Value;
+            loanInterestRateLabel.Text = $"Interest Rate: {loanInterestRate}%";
+        }
+
     }
 }

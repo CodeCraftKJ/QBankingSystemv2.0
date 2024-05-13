@@ -39,12 +39,10 @@
             this.remainingBalanceTextBox = new System.Windows.Forms.TextBox();
             this.remainingBalanceLabel = new System.Windows.Forms.Label();
             this.repayLoanButton = new System.Windows.Forms.Button();
-            this.textLoanAccount = new System.Windows.Forms.TextBox();
+            this.TxtBoxCurrency = new System.Windows.Forms.TextBox();
             this.labelSendLoanTo = new System.Windows.Forms.Label();
             this.toAccount1 = new System.Windows.Forms.TextBox();
             this.ToAccount = new System.Windows.Forms.Label();
-            this.loanAmountValueLabel = new System.Windows.Forms.Label();
-            this.loanInterestRateValueLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loanAmountTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanInterestRateTrackBar)).BeginInit();
             this.SuspendLayout();
@@ -80,17 +78,24 @@
             // loanAmountTrackBar
             // 
             this.loanAmountTrackBar.Location = new System.Drawing.Point(34, 40);
+            this.loanAmountTrackBar.Maximum = 1000;
+            this.loanAmountTrackBar.Minimum = 50;
             this.loanAmountTrackBar.Name = "loanAmountTrackBar";
             this.loanAmountTrackBar.Size = new System.Drawing.Size(264, 56);
-            this.loanAmountTrackBar.TabIndex = 4;
+            this.loanAmountTrackBar.TabIndex = 10;
+            this.loanAmountTrackBar.Value = 50;
+            this.loanAmountTrackBar.Scroll += new System.EventHandler(this.loanAmountTrackBar_Scroll);
             // 
             // loanInterestRateTrackBar
             // 
             this.loanInterestRateTrackBar.Location = new System.Drawing.Point(34, 130);
+            this.loanInterestRateTrackBar.Maximum = 100;
+            this.loanInterestRateTrackBar.Minimum = 1;
             this.loanInterestRateTrackBar.Name = "loanInterestRateTrackBar";
             this.loanInterestRateTrackBar.Size = new System.Drawing.Size(264, 56);
             this.loanInterestRateTrackBar.TabIndex = 5;
-            this.loanInterestRateTrackBar.Value = 4;
+            this.loanInterestRateTrackBar.Value = 1;
+            this.loanInterestRateTrackBar.Scroll += new System.EventHandler(this.loanInterestRateTrackBar_Scroll);
             // 
             // loanCostLabel
             // 
@@ -123,9 +128,9 @@
             this.remainingBalanceLabel.AutoSize = true;
             this.remainingBalanceLabel.Location = new System.Drawing.Point(369, 41);
             this.remainingBalanceLabel.Name = "remainingBalanceLabel";
-            this.remainingBalanceLabel.Size = new System.Drawing.Size(139, 20);
+            this.remainingBalanceLabel.Size = new System.Drawing.Size(99, 20);
             this.remainingBalanceLabel.TabIndex = 11;
-            this.remainingBalanceLabel.Text = "Remaining Balance:";
+            this.remainingBalanceLabel.Text = "Current Loans";
             // 
             // repayLoanButton
             // 
@@ -137,22 +142,21 @@
             this.repayLoanButton.UseVisualStyleBackColor = true;
             this.repayLoanButton.Click += new System.EventHandler(this.repayLoanButton_Click);
             // 
-            // textLoanAccount
+            // TxtBoxCurrency
             // 
-            this.textLoanAccount.Location = new System.Drawing.Point(128, 215);
-            this.textLoanAccount.Name = "textLoanAccount";
-            this.textLoanAccount.ReadOnly = true;
-            this.textLoanAccount.Size = new System.Drawing.Size(170, 27);
-            this.textLoanAccount.TabIndex = 14;
+            this.TxtBoxCurrency.Location = new System.Drawing.Point(128, 215);
+            this.TxtBoxCurrency.Name = "TxtBoxCurrency";
+            this.TxtBoxCurrency.Size = new System.Drawing.Size(170, 27);
+            this.TxtBoxCurrency.TabIndex = 14;
             // 
             // labelSendLoanTo
             // 
             this.labelSendLoanTo.AutoSize = true;
             this.labelSendLoanTo.Location = new System.Drawing.Point(34, 218);
             this.labelSendLoanTo.Name = "labelSendLoanTo";
-            this.labelSendLoanTo.Size = new System.Drawing.Size(95, 20);
+            this.labelSendLoanTo.Size = new System.Drawing.Size(66, 20);
             this.labelSendLoanTo.TabIndex = 13;
-            this.labelSendLoanTo.Text = "LoanAccount";
+            this.labelSendLoanTo.Text = "Currency";
             // 
             // toAccount1
             // 
@@ -170,25 +174,6 @@
             this.ToAccount.TabIndex = 15;
             this.ToAccount.Text = "ToAccount";
             // 
-            // loanAmountValueLabel
-            // 
-            this.loanAmountValueLabel.AutoSize = true;
-            this.loanAmountValueLabel.Location = new System.Drawing.Point(141, 9);
-            this.loanAmountValueLabel.Name = "loanAmountValueLabel";
-            this.loanAmountValueLabel.Size = new System.Drawing.Size(36, 20);
-            this.loanAmountValueLabel.TabIndex = 6;
-            this.loanAmountValueLabel.Text = "0.00";
-            this.loanAmountValueLabel.Click += new System.EventHandler(this.loanAmountValueLabel_Click);
-            // 
-            // loanInterestRateValueLabel
-            // 
-            this.loanInterestRateValueLabel.AutoSize = true;
-            this.loanInterestRateValueLabel.Location = new System.Drawing.Point(161, 96);
-            this.loanInterestRateValueLabel.Name = "loanInterestRateValueLabel";
-            this.loanInterestRateValueLabel.Size = new System.Drawing.Size(36, 20);
-            this.loanInterestRateValueLabel.TabIndex = 7;
-            this.loanInterestRateValueLabel.Text = "0.00";
-            // 
             // LoanAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -196,15 +181,13 @@
             this.ClientSize = new System.Drawing.Size(755, 333);
             this.Controls.Add(this.toAccount1);
             this.Controls.Add(this.ToAccount);
-            this.Controls.Add(this.textLoanAccount);
+            this.Controls.Add(this.TxtBoxCurrency);
             this.Controls.Add(this.labelSendLoanTo);
             this.Controls.Add(this.repayLoanButton);
             this.Controls.Add(this.remainingBalanceLabel);
             this.Controls.Add(this.remainingBalanceTextBox);
             this.Controls.Add(this.transferList);
             this.Controls.Add(this.loanCostLabel);
-            this.Controls.Add(this.loanInterestRateValueLabel);
-            this.Controls.Add(this.loanAmountValueLabel);
             this.Controls.Add(this.loanInterestRateTrackBar);
             this.Controls.Add(this.loanAmountTrackBar);
             this.Controls.Add(this.loanInterestRateLabel);
@@ -233,11 +216,9 @@
         private System.Windows.Forms.TextBox remainingBalanceTextBox;
         private System.Windows.Forms.Label remainingBalanceLabel;
         private System.Windows.Forms.Button repayLoanButton;
-        private System.Windows.Forms.TextBox textLoanAccount;
+        private System.Windows.Forms.TextBox TxtBoxCurrency;
         private System.Windows.Forms.Label labelSendLoanTo;
         private System.Windows.Forms.TextBox toAccount1;
         private System.Windows.Forms.Label ToAccount;
-        private System.Windows.Forms.Label loanAmountValueLabel;
-        private System.Windows.Forms.Label loanInterestRateValueLabel;
     }
 }
