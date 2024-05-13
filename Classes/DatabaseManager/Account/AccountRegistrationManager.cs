@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 public static class AccountRegistrationManager
 {
-    public static void RegisterAccount(string accountName, string accountType, string currency, decimal initialBalance,
+    public static int RegisterAccount(string accountName, string accountType, string currency, decimal initialBalance,
                                         decimal depositLimit, decimal withdrawalLimit, decimal transferLimit, int userID)
     {
         int accountID = GenerateAccountID(accountType);
@@ -34,15 +34,18 @@ public static class AccountRegistrationManager
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Account registered successfully!");
+                    return accountID;
                 }
                 else
                 {
                     MessageBox.Show("Failed to register account.");
+                    return -1;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                return -1;
             }
         }
     }
@@ -83,5 +86,4 @@ public static class AccountRegistrationManager
         }
         return sb.ToString();
     }
-
 }

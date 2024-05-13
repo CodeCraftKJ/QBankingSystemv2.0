@@ -17,102 +17,69 @@ namespace QBankingSystemv2._0.Forms
             InitializeComponent();
             this.userID = CurrentUser.UserID;
             this.loanAmount = loanAmountTrackBar.Value;
-            this.loanInterestRate = loanInterestRateTrackBar.Value; 
-            UpdateLoanAmountLabel();
-            UpdateLoanInterestRateLabel();
+            this.loanInterestRate = loanInterestRateTrackBar.Value;
+            RefreshLoanList();
         }
 
         private void takeLoanButton_Click(object sender, EventArgs e)
         {
-            int loanAccountID = CreateLoanAccount(TxtBoxCurrency.Text);
             string toAccount = toAccount1.Text;
-            CreateNewLoan(loanAccountID, TxtBoxCurrency.Text);
             decimal loanAmount = loanAmountTrackBar.Value;
             decimal loanInterestRate = loanInterestRateTrackBar.Value;
-            TransactionManager.ExecuteTransaction(new Transaction(loanAccountID.ToString(), toAccount, "Loan", loanAmount, "Loan taken"), CurrentUser.UserID);
-            RefreshLoanList();
-        }
+            string currency = TxtBoxCurrency.Text;
 
-        private void repayLoanButton_Click(object sender, EventArgs e)
-        {
-            if (!HasLoan())
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.GetConnectionString()))
             {
-                MessageBox.Show("You don't have a loan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private decimal GetRemainingBalance()
-        {
-            string connectionString = ConfigurationManager.GetConnectionString();
-            string query = "SELECT RemainingBalance FROM QPayLoans WHERE UserID = @UserID";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserID", CurrentUser.UserID);
                 connection.Open();
-                return (decimal)command.ExecuteScalar();
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                try
+                {
+                    int loanAccountID = CreateLoanAccount(connection, transaction, currency, loanAmount);
+                    CreateNewLoan(connection, transaction, loanAccountID, loanAmount, loanInterestRate);
+                    TransactionManager.ExecuteTransaction(new Transaction(loanAccountID.ToString(), toAccount, "Loan", loanAmount, "Loan taken", DateTime.Now), CurrentUser.UserID);
+                    transaction.Commit();
+                    RefreshLoanList();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("Error: " + ex.Message, "Transaction Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        private void UpdateLoanAmountLabel()
+        private int CreateLoanAccount(SqlConnection connection, SqlTransaction transaction, string currency, decimal loanAmount)
         {
-            loanAmountLabel.Text = $"Loan Amount: {loanAmount:C}";
-        }
-
-        private void UpdateLoanInterestRateLabel()
-        {
-            loanInterestRateLabel.Text = $"Interest Rate: {loanInterestRate}%";
-        }
-
-        private bool HasLoan()
-        {
-            string connectionString = ConfigurationManager.GetConnectionString();
-            string query = "SELECT COUNT(*) FROM QPayLoans WHERE UserID = @UserID";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserID", userID);
-                connection.Open();
-                int count = (int)command.ExecuteScalar();
-                return count > 0;
+                int loanAccountID = AccountRegistrationManager.RegisterAccount("Loan Account", "Loan Account", currency, loanAmount, 999999, 999999, 999999, userID);
+                return loanAccountID;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to create loan account: " + ex.Message);
             }
         }
 
-
-        private int CreateLoanAccount(string currency)
+        private void CreateNewLoan(SqlConnection connection, SqlTransaction transaction, int loanAccountID, decimal loanAmount, decimal loanInterestRate)
         {
-            AccountRegistrationManager.RegisterAccount("Loan Account", "Loan Account", currency, loanAmount, 9999999, 9999999, 9999999, userID);
-            string connectionString = ConfigurationManager.GetConnectionString();
-            string query = "SELECT AccountID FROM QPayAccounts WHERE UserID = @UserID AND AccountType = 'Loan Account'";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserID", userID);
-                connection.Open();
-                return (int)command.ExecuteScalar();
-            }
-        }
-
-        private void CreateNewLoan(int loanAccountID, string currency)
-        {
-            string connectionString = ConfigurationManager.GetConnectionString();
-            string insertQuery = "INSERT INTO QPayLoans (UserID, LoanAmount, InterestRate, RemainingBalance, LoanAccountID) VALUES (@UserID, @LoanAmount, @InterestRate, 0, @LoanAccountID)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(insertQuery, connection);
+                string insertQuery = "INSERT INTO QPayLoans (UserID, LoanAmount, InterestRate, RemainingBalance, LoanAccountID) VALUES (@UserID, @LoanAmount, @InterestRate, 0, @LoanAccountID)";
+                SqlCommand command = new SqlCommand(insertQuery, connection, transaction);
                 command.Parameters.AddWithValue("@UserID", userID);
                 command.Parameters.AddWithValue("@LoanAmount", loanAmount);
                 command.Parameters.AddWithValue("@InterestRate", loanInterestRate);
                 command.Parameters.AddWithValue("@LoanAccountID", loanAccountID);
-                connection.Open();
                 command.ExecuteNonQuery();
             }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to create new loan: " + ex.Message);
+            }
         }
+
         private void RefreshLoanList()
         {
             transferList.Items.Clear();

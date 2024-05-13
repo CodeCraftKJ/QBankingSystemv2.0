@@ -36,14 +36,7 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                         decimal withdrawalLimit = Convert.ToDecimal(reader["WithdrawalLimit"]);
                         decimal transferLimit = Convert.ToDecimal(reader["TransferLimit"]);
 
-                        if (accountType == "Savings Account")
-                        {
-                            userAccounts.Add(new SavingsAccount(accountName,accountID, currency, balance, depositLimit, withdrawalLimit, transferLimit));
-                        }
-                        else if (accountType == "Checking Account")
-                        {
-                            userAccounts.Add(new CheckingAccount(accountName,accountID, currency, balance, depositLimit, withdrawalLimit, transferLimit));
-                        }
+                        userAccounts.Add(new SavingsAccount(accountName,accountID, currency, balance, depositLimit, withdrawalLimit, transferLimit));
                     }
 
                     reader.Close();

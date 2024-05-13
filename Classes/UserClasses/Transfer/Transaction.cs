@@ -12,14 +12,14 @@ namespace QBankingSystemv2._0.Classes.Transactions
         public DateTime TransactionDate { get; private set; }
         public string Description { get; private set; }
 
-        public Transaction(string sourceAccountID, string destinationAccountID, string transactionType, decimal amount, string description)
+        public Transaction(string sourceAccountID, string destinationAccountID, string transactionType, decimal amount, string description, DateTime date)
         {
             TransactionID = GenerateTransactionID().ToString();
             SourceAccountID = sourceAccountID;
             DestinationAccountID = destinationAccountID;
             TransactionType = transactionType;
             Amount = amount;
-            TransactionDate = DateTime.Now;
+            TransactionDate = date;
             Description = description;
         }
 

@@ -18,20 +18,17 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
 
                 if (!IsUserAccount(connection, userID, transaction.SourceAccountID))
                 {
-                    MessageBox.Show("Error: Source account does not belong to the user.");
-                    return;
+                    throw new Exception("Source account does not belong to the user.");
                 }
 
                 if (!IsAccountExists(connection, transaction.DestinationAccountID))
                 {
-                    MessageBox.Show("Error: Destination account does not exist.");
-                    return;
+                    throw new Exception("Destination account does not exist.");
                 }
 
                 if (!CheckBalanceAndTransferLimit(connection, transaction.SourceAccountID, transaction.Amount))
                 {
-                    MessageBox.Show("Error: Insufficient balance or transfer limit exceeded.");
-                    return;
+                    throw new Exception("Insufficient balance or transfer limit exceeded.");
                 }
 
                 string query = @"BEGIN TRANSACTION; " +
@@ -50,14 +47,7 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                 command.Parameters.AddWithValue("@TransactionDate", transaction.TransactionDate);
                 command.Parameters.AddWithValue("@Description", transaction.Description);
 
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
+                command.ExecuteNonQuery();
             }
         }
 
@@ -90,7 +80,8 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                             destinationAccountID,
                             reader["TransactionType"].ToString(),
                             Convert.ToDecimal(reader["Amount"]),
-                            reader["Description"].ToString()
+                            reader["Description"].ToString(),
+                            Convert.ToDateTime(reader["TransactionDate"])
                         );
                         accountTransfers.Add((transaction, isOutgoing));
                     }
@@ -99,7 +90,7 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    throw new Exception("Failed to get account transfers: " + ex.Message);
                 }
             }
 

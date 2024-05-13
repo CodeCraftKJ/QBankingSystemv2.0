@@ -114,7 +114,7 @@ namespace QBankingSystemv2._0.Forms
                         DateTime transactionDate = DateTime.Parse(parts[3].Split(':')[1].Trim());
                         string description = parts[4].Split(':')[1].Trim();
 
-                        Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, "Transfer", amount, description);
+                        Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, "Transfer", amount, description, DateTime.Now);
                         TransactionManager.ExecuteTransaction(transaction, CurrentUser.UserID);
                     }
                     LoadTransfers();

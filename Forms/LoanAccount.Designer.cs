@@ -38,7 +38,6 @@
             this.transferList = new System.Windows.Forms.ListBox();
             this.remainingBalanceTextBox = new System.Windows.Forms.TextBox();
             this.remainingBalanceLabel = new System.Windows.Forms.Label();
-            this.repayLoanButton = new System.Windows.Forms.Button();
             this.TxtBoxCurrency = new System.Windows.Forms.TextBox();
             this.labelSendLoanTo = new System.Windows.Forms.Label();
             this.toAccount1 = new System.Windows.Forms.TextBox();
@@ -49,7 +48,7 @@
             // 
             // takeLoanButton
             // 
-            this.takeLoanButton.Location = new System.Drawing.Point(34, 291);
+            this.takeLoanButton.Location = new System.Drawing.Point(150, 290);
             this.takeLoanButton.Name = "takeLoanButton";
             this.takeLoanButton.Size = new System.Drawing.Size(120, 34);
             this.takeLoanButton.TabIndex = 0;
@@ -132,16 +131,6 @@
             this.remainingBalanceLabel.TabIndex = 11;
             this.remainingBalanceLabel.Text = "Current Loans";
             // 
-            // repayLoanButton
-            // 
-            this.repayLoanButton.Location = new System.Drawing.Point(201, 288);
-            this.repayLoanButton.Name = "repayLoanButton";
-            this.repayLoanButton.Size = new System.Drawing.Size(120, 34);
-            this.repayLoanButton.TabIndex = 12;
-            this.repayLoanButton.Text = "Repay Loan";
-            this.repayLoanButton.UseVisualStyleBackColor = true;
-            this.repayLoanButton.Click += new System.EventHandler(this.repayLoanButton_Click);
-            // 
             // TxtBoxCurrency
             // 
             this.TxtBoxCurrency.Location = new System.Drawing.Point(128, 215);
@@ -183,7 +172,6 @@
             this.Controls.Add(this.ToAccount);
             this.Controls.Add(this.TxtBoxCurrency);
             this.Controls.Add(this.labelSendLoanTo);
-            this.Controls.Add(this.repayLoanButton);
             this.Controls.Add(this.remainingBalanceLabel);
             this.Controls.Add(this.remainingBalanceTextBox);
             this.Controls.Add(this.transferList);
@@ -215,7 +203,6 @@
         private System.Windows.Forms.ListBox transferList;
         private System.Windows.Forms.TextBox remainingBalanceTextBox;
         private System.Windows.Forms.Label remainingBalanceLabel;
-        private System.Windows.Forms.Button repayLoanButton;
         private System.Windows.Forms.TextBox TxtBoxCurrency;
         private System.Windows.Forms.Label labelSendLoanTo;
         private System.Windows.Forms.TextBox toAccount1;
