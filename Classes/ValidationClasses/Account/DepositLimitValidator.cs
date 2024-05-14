@@ -6,7 +6,9 @@ namespace QBankingSystemv2._0.ValidationClasses
 {
     public class DepositLimitValidator : AbstractValidator<decimal>
     {
-        private static ToolTip toolTip = new ToolTip();
+        private static readonly ToolTip toolTip = new ToolTip();
+        private const decimal MinDepositLimit = 10;
+        private const decimal MaxDepositLimit = 10000;
 
         public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {
@@ -17,10 +19,10 @@ namespace QBankingSystemv2._0.ValidationClasses
                 toolTip.Show("Invalid deposit limit format. Please enter a valid decimal number.", textBox, textBox.Width, 0);
                 return new ValidationResult(new[] { new ValidationFailure("DepositLimit", "Invalid deposit limit format.") });
             }
-            else if (value < 10 || value > 10000)
+            else if (value < MinDepositLimit || value > MaxDepositLimit)
             {
-                toolTip.Show("Deposit limit must be between 10 and 10000.", textBox, textBox.Width, 0);
-                return new ValidationResult(new[] { new ValidationFailure("DepositLimit", "Deposit limit must be between 10 and 10000.") });
+                toolTip.Show($"Deposit limit must be between {MinDepositLimit} and {MaxDepositLimit}.", textBox, textBox.Width, 0);
+                return new ValidationResult(new[] { new ValidationFailure("DepositLimit", $"Deposit limit must be between {MinDepositLimit} and {MaxDepositLimit}.") });
             }
             else
             {

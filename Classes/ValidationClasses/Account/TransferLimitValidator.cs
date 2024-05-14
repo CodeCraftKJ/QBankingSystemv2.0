@@ -6,7 +6,9 @@ namespace QBankingSystemv2._0.ValidationClasses
 {
     public class TransferLimitValidator : AbstractValidator<decimal>
     {
-        private static ToolTip toolTip = new ToolTip();
+        private static readonly ToolTip toolTip = new ToolTip();
+        private const decimal MinTransferLimit = 10;
+        private const decimal MaxTransferLimit = 10000;
 
         public ValidationResult ValidateAndShowMessage(TextBox textBox)
         {
@@ -17,10 +19,10 @@ namespace QBankingSystemv2._0.ValidationClasses
                 toolTip.Show("Invalid transfer limit format. Please enter a valid decimal number.", textBox, textBox.Width, 0);
                 return new ValidationResult(new[] { new ValidationFailure("TransferLimit", "Invalid transfer limit format.") });
             }
-            else if (value < 10 || value > 10000)
+            else if (value < MinTransferLimit || value > MaxTransferLimit)
             {
-                toolTip.Show("Transfer limit must be between 10 and 10000.", textBox, textBox.Width, 0);
-                return new ValidationResult(new[] { new ValidationFailure("TransferLimit", "Transfer limit must be between 10 and 10000.") });
+                toolTip.Show($"Transfer limit must be between {MinTransferLimit} and {MaxTransferLimit}.", textBox, textBox.Width, 0);
+                return new ValidationResult(new[] { new ValidationFailure("TransferLimit", $"Transfer limit must be between {MinTransferLimit} and {MaxTransferLimit}.") });
             }
             else
             {
