@@ -24,7 +24,6 @@ namespace QBankingSystemv2._0.Forms
             {
                 LoanDatabaseManager.TakeLoan(toAccount, loanAmount, loanInterestRate, currency);
                 RefreshLoanList();
-                CalculateAndDisplayLoanCost(loanAmount, loanInterestRate);
             }
             catch (Exception ex)
             {
@@ -42,20 +41,22 @@ namespace QBankingSystemv2._0.Forms
             }
         }
 
-        private void CalculateAndDisplayLoanCost(decimal loanAmount, decimal loanInterestRate)
+        private void CalculateAndDisplayLoanCost()
         {
-            decimal loanCost = loanAmount * loanInterestRate / 100;
+            decimal loanCost = loanAmountTrackBar.Value * loanInterestRateTrackBar.Value / 100;
             loanCostLabel.Text = $"Loan Cost: {loanCost:C}";
         }
 
         private void loanAmountTrackBar_Scroll(object sender, EventArgs e)
         {
             loanAmountLabel.Text = $"Loan Amount: {loanAmountTrackBar.Value:C}";
+            CalculateAndDisplayLoanCost();
         }
 
         private void loanInterestRateTrackBar_Scroll(object sender, EventArgs e)
         {
             loanInterestRateLabel.Text = $"Interest Rate: {loanInterestRateTrackBar.Value}%";
+            CalculateAndDisplayLoanCost();
         }
     }
 }
