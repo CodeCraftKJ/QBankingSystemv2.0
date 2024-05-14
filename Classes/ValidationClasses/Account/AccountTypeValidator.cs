@@ -26,7 +26,8 @@ namespace QBankingSystemv2._0.ValidationClasses
         public AccountTypeValidator()
         {
             RuleFor(value => value)
-                .NotEmpty().WithMessage("Please select an account type.");
+                .Must(value => value == "Savings Account" || value == "Checking Account")
+                .WithMessage("Please select either Savings Account or Checking Account.");
         }
     }
 }

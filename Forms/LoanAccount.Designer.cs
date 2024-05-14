@@ -36,7 +36,6 @@
             this.loanInterestRateTrackBar = new System.Windows.Forms.TrackBar();
             this.loanCostLabel = new System.Windows.Forms.Label();
             this.transferList = new System.Windows.Forms.ListBox();
-            this.remainingBalanceTextBox = new System.Windows.Forms.TextBox();
             this.remainingBalanceLabel = new System.Windows.Forms.Label();
             this.TxtBoxCurrency = new System.Windows.Forms.TextBox();
             this.labelSendLoanTo = new System.Windows.Forms.Label();
@@ -99,7 +98,7 @@
             // loanCostLabel
             // 
             this.loanCostLabel.AutoSize = true;
-            this.loanCostLabel.Location = new System.Drawing.Point(34, 182);
+            this.loanCostLabel.Location = new System.Drawing.Point(34, 178);
             this.loanCostLabel.Name = "loanCostLabel";
             this.loanCostLabel.Size = new System.Drawing.Size(77, 20);
             this.loanCostLabel.TabIndex = 8;
@@ -113,14 +112,6 @@
             this.transferList.Name = "transferList";
             this.transferList.Size = new System.Drawing.Size(375, 224);
             this.transferList.TabIndex = 9;
-            // 
-            // remainingBalanceTextBox
-            // 
-            this.remainingBalanceTextBox.Location = new System.Drawing.Point(128, 179);
-            this.remainingBalanceTextBox.Name = "remainingBalanceTextBox";
-            this.remainingBalanceTextBox.ReadOnly = true;
-            this.remainingBalanceTextBox.Size = new System.Drawing.Size(170, 27);
-            this.remainingBalanceTextBox.TabIndex = 10;
             // 
             // remainingBalanceLabel
             // 
@@ -173,7 +164,6 @@
             this.Controls.Add(this.TxtBoxCurrency);
             this.Controls.Add(this.labelSendLoanTo);
             this.Controls.Add(this.remainingBalanceLabel);
-            this.Controls.Add(this.remainingBalanceTextBox);
             this.Controls.Add(this.transferList);
             this.Controls.Add(this.loanCostLabel);
             this.Controls.Add(this.loanInterestRateTrackBar);
@@ -201,7 +191,6 @@
         private System.Windows.Forms.TrackBar loanInterestRateTrackBar;
         private System.Windows.Forms.Label loanCostLabel;
         private System.Windows.Forms.ListBox transferList;
-        private System.Windows.Forms.TextBox remainingBalanceTextBox;
         private System.Windows.Forms.Label remainingBalanceLabel;
         private System.Windows.Forms.TextBox TxtBoxCurrency;
         private System.Windows.Forms.Label labelSendLoanTo;
