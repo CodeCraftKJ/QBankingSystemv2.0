@@ -1,0 +1,3 @@
+FROM: 123456, TO: 654321, Amount: 100, Description: Transfer from Savings
+FROM: 111222, TO: 333444, Amount: 200, Description: Monthly Salary
+FROM: 111222, TO: 333444, Amount: 200, Description: Monthly Salary
