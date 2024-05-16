@@ -27,7 +27,7 @@ namespace QBankingSystemv2._0.Classes.DatabaseManager
                             CurrentUser.Username = reader["Username"].ToString();
                             CurrentUser.MaterialStatus = reader["MaterialStatus"].ToString();
                             CurrentUser.Address = reader["Address"].ToString();
-                            CurrentUser.BirthDate = reader["BirthDate"].ToString();
+                            CurrentUser.BirthDate = string.IsNullOrEmpty(reader["BirthDate"].ToString()) ? "Brak danych" : DateTime.Parse(reader["BirthDate"].ToString()).ToShortDateString();
                             CurrentUser.Email = reader["Email"].ToString();
                             CurrentUser.Pesel = reader["Pesel"].ToString();
                             CurrentUser.Phone = reader["Phone"].ToString();

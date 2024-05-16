@@ -53,6 +53,7 @@ namespace QBankingSystemv2._0.Forms
                 try
                 {
                     TransactionManager.ExecuteTransaction(transaction, CurrentUser.UserID);
+                    MessageBox.Show("Transfer Executed Successfully!.");
                 }
                 catch (Exception ex)
                 {
