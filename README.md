@@ -29,6 +29,8 @@ Users can control virtual bank accounts, conduct simulated transactions, and man
 
 ## Database Configuration
 
+The example code to create db for application is in README-DBcreator.sql file.
+
 To configure the database connection, create an appsettings.json file with the following content:
 
 ```json
@@ -37,7 +39,3 @@ To configure the database connection, create an appsettings.json file with the f
     "MainDatabaseConnection": "YourConnectionString"
   }
 }
-
-## README-DBcreator.sql
-
-The xample code to create db for application.
