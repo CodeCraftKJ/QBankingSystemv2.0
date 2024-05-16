@@ -24,6 +24,8 @@ Users can control virtual bank accounts, conduct simulated transactions, and man
 
 **Note:** To run the program, you need access to a database. You can create your own local database according to the provided schema in the README and connect it. Currently, the database is not connected in the code.
 
+![image](https://github.com/CodeCraftKJ/QBankingSystemv2.0/assets/137210777/315cd6b0-72c8-4be4-9620-36eb1fc0101f)
+
 ## Database Configuration
 
 To configure the database connection, create an appsettings.json file with the following content:
@@ -34,7 +36,3 @@ To configure the database connection, create an appsettings.json file with the f
     "MainDatabaseConnection": "YourConnectionString"
   }
 }
-
-![image](https://github.com/CodeCraftKJ/QBankingSystemv2.0/assets/137210777/315cd6b0-72c8-4be4-9620-36eb1fc0101f)
-
-
