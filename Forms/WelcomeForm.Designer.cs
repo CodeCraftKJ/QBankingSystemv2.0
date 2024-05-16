@@ -36,6 +36,7 @@ namespace QBankingSystemv2._0.Forms
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace QBankingSystemv2._0.Forms
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWelcome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -129,6 +129,20 @@ namespace QBankingSystemv2._0.Forms
             this.label3.TabIndex = 4;
             this.label3.Text = "Welcome to";
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(139, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(319, 18);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Log in to your QPay account or register to continue.";
+            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -137,11 +151,11 @@ namespace QBankingSystemv2._0.Forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(124, 461);
+            this.label5.Location = new System.Drawing.Point(229, 471);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(437, 18);
+            this.label5.Size = new System.Drawing.Size(280, 18);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Don\'t want to register? Try trial account now. Click \'Log in\' to continue!";
+            this.label5.Text = "Already registred?. Click \'Log in\' to continue!";
             // 
             // label4
             // 
@@ -226,20 +240,6 @@ namespace QBankingSystemv2._0.Forms
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(139, 148);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(319, 18);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Log in to your QPay account or register to continue.";
             // 
             // WelcomeForm
             // 
