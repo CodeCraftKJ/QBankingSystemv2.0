@@ -1,4 +1,4 @@
-[DB-SQLcreator.txt](https://github.com/CodeCraftKJ/QBankingSystemv2.0/files/15339000/DB-SQLcreator.txt)# QBankingSystemv2.0
+# QBankingSystemv2.0
 
 QBankingSystemv2.0 is a simulation application of a banking system, allowing users to interact with a virtual representation of a bank.
 Please note that this application is for simulation purposes only and does not perform real banking operations. 
@@ -29,7 +29,7 @@ Users can control virtual bank accounts, conduct simulated transactions, and man
 
 ## Database Configuration
 
-The example code to create db for application is in README-DBcreator.sql file.
+The example code to create db --> [DB-SQLcreator.txt](https://github.com/CodeCraftKJ/QBankingSystemv2.0/files/15339000/DB-SQLcreator.txt)
 
 To configure the database connection, create an appsettings.json file with the following content:
 
