@@ -37,3 +37,7 @@ To configure the database connection, create an appsettings.json file with the f
     "MainDatabaseConnection": "YourConnectionString"
   }
 }
+
+## README-DBcreator.sql
+
+The xample code to create db for application.
