@@ -29,8 +29,7 @@ Users can control virtual bank accounts, conduct simulated transactions, and man
 
 ## Database Configuration
 
-The example code to create db --> [DB-SQLcreator.txt](https://github.com/CodeCraftKJ/QBankingSystemv2.0/files/15339000/DB-SQLcreator.txt)
-
+The example code to create db --> [DB-SQLcreator.txt](https://github.com/CodeCraftKJ/QBankingSystemv2.0/files/15339933/DB-SQLcreator.txt)
 To configure the database connection, create an appsettings.json file with the following content:
 
 ```json
