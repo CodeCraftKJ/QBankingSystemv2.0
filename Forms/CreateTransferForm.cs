@@ -50,7 +50,15 @@ namespace QBankingSystemv2._0.Forms
 
                 Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, transactionType, amount, description, DateTime.Now);
 
-                TransactionManager.ExecuteTransaction(transaction,CurrentUser.UserID);
+                try
+                {
+                    TransactionManager.ExecuteTransaction(transaction, CurrentUser.UserID);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error:."+ ex.Message);
+                }
+
             }
             else
             {
