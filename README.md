@@ -34,4 +34,7 @@ To configure the database connection, create an appsettings.json file with the f
     "MainDatabaseConnection": "YourConnectionString"
   }
 }
-![image](https://github.com/CodeCraftKJ/QBankingSystemv2.0/assets/137210777/aadc6e93-c751-4511-9bf3-3fd87c55226b)
+
+![image](https://github.com/CodeCraftKJ/QBankingSystemv2.0/assets/137210777/315cd6b0-72c8-4be4-9620-36eb1fc0101f)
+
+
