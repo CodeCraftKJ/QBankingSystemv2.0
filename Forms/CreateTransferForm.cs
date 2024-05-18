@@ -30,7 +30,7 @@ namespace QBankingSystemv2._0.Forms
             descriptionValidator = new DescriptionValidator();
         }
 
-        private void createTransferButton_Click(object sender, EventArgs e)
+        private void CreateTransferButton_Click(object sender, EventArgs e)
         {
             ValidationResult sourceAccountValidationResult = sourceAccountValidator.ValidateAndShowMessage(sourceAccountComboBox);
             ValidationResult destinationAccountValidationResult = destinationAccountValidator.ValidateAndShowMessage(destinationAccountComboBox);
@@ -48,7 +48,7 @@ namespace QBankingSystemv2._0.Forms
                 decimal amount = decimal.Parse(amountTextBox.Text);
                 string description = descriptionTextBox.Text;
 
-                Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, transactionType, amount, description, DateTime.Now);
+                Transaction transaction = new(sourceAccountID, destinationAccountID, transactionType, amount, description, DateTime.Now);
 
                 try
                 {
@@ -67,27 +67,27 @@ namespace QBankingSystemv2._0.Forms
             }
         }
 
-        private void amountTextBox_TextChanged_1(object sender, EventArgs e)
+        private void AmountTextBox_TextChanged_1(object sender, EventArgs e)
         {
             amountValidator.ValidateAndShowMessage(amountTextBox);
         }
 
-        private void descriptionTextBox_TextChanged_1(object sender, EventArgs e)
+        private void DescriptionTextBox_TextChanged_1(object sender, EventArgs e)
         {
             descriptionValidator.ValidateAndShowMessage(descriptionTextBox);
         }
 
-        private void sourceAccountComboBox_TextChanged(object sender, EventArgs e)
+        private void SourceAccountComboBox_TextChanged(object sender, EventArgs e)
         {
             sourceAccountValidator.ValidateAndShowMessage(sourceAccountComboBox);
         }
 
-        private void destinationAccountComboBox_TextChanged(object sender, EventArgs e)
+        private void DestinationAccountComboBox_TextChanged(object sender, EventArgs e)
         {
             destinationAccountValidator.ValidateAndShowMessage(destinationAccountComboBox);
         }
 
-        private void transferTypeComboBox_TextChanged(object sender, EventArgs e)
+        private void TransferTypeComboBox_TextChanged(object sender, EventArgs e)
         {
             transferTypeValidator.ValidateAndShowMessage(transferTypeComboBox);
         }

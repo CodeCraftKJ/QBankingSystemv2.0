@@ -6,7 +6,7 @@ namespace QBankingSystemv2._0.ValidationClasses
 {
     public class TransferTypeValidator : AbstractValidator<string>
     {
-        private static ToolTip toolTip = new ToolTip();
+        private static readonly ToolTip toolTip = new();
 
         public ValidationResult ValidateAndShowMessage(TextBox comboBox)
         {

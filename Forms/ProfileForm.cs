@@ -45,22 +45,21 @@ namespace QBankingSystemv2._0.Forms
 
         private void CreateAccountBtn_Click(object sender, EventArgs e)
         {
-            CreateAccountForm accountForm = new CreateAccountForm();
+            CreateAccountForm accountForm = new();
             accountForm.FormClosed += (s, args) => RefreshAccountList();
             accountForm.Show();
         }
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             CurrentUser.Clear();
-            WelcomeForm welcomeForm = new WelcomeForm();
+            WelcomeForm welcomeForm = new();
             welcomeForm.Show();
             this.Close();
         }
 
         private void BankAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = BankAccounts.SelectedItem as string;
-            if (selectedItem != null)
+            if (BankAccounts.SelectedItem is string selectedItem)
             {
                 string[] parts = selectedItem.Split("-   -");
                 if (parts.Length == 2)
@@ -70,7 +69,7 @@ namespace QBankingSystemv2._0.Forms
                     IAccount selectedAccount = GetUserAccountByNameAndID(accountName, accountID);
                     if (selectedAccount != null)
                     {
-                        Account accountForm = new Account(selectedAccount);
+                        Account accountForm = new(selectedAccount);
                         accountForm.Show();
                     }
                 }

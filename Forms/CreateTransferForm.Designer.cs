@@ -84,7 +84,7 @@
             this.amountTextBox.Name = "amountTextBox";
             this.amountTextBox.Size = new System.Drawing.Size(150, 27);
             this.amountTextBox.TabIndex = 7;
-            this.amountTextBox.TextChanged += new System.EventHandler(this.amountTextBox_TextChanged_1);
+            this.amountTextBox.TextChanged += new System.EventHandler(this.AmountTextBox_TextChanged_1);
             // 
             // descriptionLabel
             // 
@@ -102,7 +102,7 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(200, 100);
             this.descriptionTextBox.TabIndex = 9;
-            this.descriptionTextBox.TextChanged += new System.EventHandler(this.descriptionTextBox_TextChanged_1);
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBox_TextChanged_1);
             // 
             // createTransferButton
             // 
@@ -112,7 +112,7 @@
             this.createTransferButton.TabIndex = 10;
             this.createTransferButton.Text = "Create Transfer";
             this.createTransferButton.UseVisualStyleBackColor = true;
-            this.createTransferButton.Click += new System.EventHandler(this.createTransferButton_Click);
+            this.createTransferButton.Click += new System.EventHandler(this.CreateTransferButton_Click);
             // 
             // transferTypeComboBox
             // 
@@ -120,7 +120,7 @@
             this.transferTypeComboBox.Name = "transferTypeComboBox";
             this.transferTypeComboBox.Size = new System.Drawing.Size(150, 27);
             this.transferTypeComboBox.TabIndex = 11;
-            this.transferTypeComboBox.TextChanged += new System.EventHandler(this.transferTypeComboBox_TextChanged);
+            this.transferTypeComboBox.TextChanged += new System.EventHandler(this.TransferTypeComboBox_TextChanged);
             // 
             // destinationAccountComboBox
             // 
@@ -128,7 +128,7 @@
             this.destinationAccountComboBox.Name = "destinationAccountComboBox";
             this.destinationAccountComboBox.Size = new System.Drawing.Size(150, 27);
             this.destinationAccountComboBox.TabIndex = 12;
-            this.destinationAccountComboBox.TextChanged += new System.EventHandler(this.destinationAccountComboBox_TextChanged);
+            this.destinationAccountComboBox.TextChanged += new System.EventHandler(this.DestinationAccountComboBox_TextChanged);
             // 
             // sourceAccountComboBox
             // 
@@ -136,7 +136,7 @@
             this.sourceAccountComboBox.Name = "sourceAccountComboBox";
             this.sourceAccountComboBox.Size = new System.Drawing.Size(150, 27);
             this.sourceAccountComboBox.TabIndex = 13;
-            this.sourceAccountComboBox.TextChanged += new System.EventHandler(this.sourceAccountComboBox_TextChanged);
+            this.sourceAccountComboBox.TextChanged += new System.EventHandler(this.SourceAccountComboBox_TextChanged);
             // 
             // CreateTransferForm
             // 
