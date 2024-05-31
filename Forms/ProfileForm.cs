@@ -1,5 +1,4 @@
-﻿using QBankingSystemv2._0.Classes.DatabaseManager;
-using QBankingSystemv2._0.Interfaces;
+﻿using QBankingSystemv2._0.Models.Account.Account;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -16,14 +15,14 @@ namespace QBankingSystemv2._0.Forms
 
         private void ProfileForm_Load(object sender, EventArgs e)
         {
-            textUserName.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
-            textBoxUsername.Text = CurrentUser.Username;
-            textMatrialStatus.Text = CurrentUser.MaterialStatus;
-            textAddress.Text = CurrentUser.Address;
-            textBirth.Text = CurrentUser.BirthDate;
-            textEmail.Text = CurrentUser.Email;
-            textPesel.Text = CurrentUser.Pesel;
-            textPhone.Text = CurrentUser.Phone;
+            textUserName.Text = User.FirstName + " " + User.LastName;
+            textBoxUsername.Text = User.Username;
+            textMatrialStatus.Text = User.MaterialStatus;
+            textAddress.Text = User.Address;
+            textBirth.Text = User.BirthDate;
+            textEmail.Text = User.Email;
+            textPesel.Text = User.Pesel;
+            textPhone.Text = User.Phone;
 
             RefreshAccountList();
         }
@@ -51,7 +50,7 @@ namespace QBankingSystemv2._0.Forms
         }
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            CurrentUser.Clear();
+            User.Clear();
             WelcomeForm welcomeForm = new();
             welcomeForm.Show();
             this.Close();
@@ -91,11 +90,11 @@ namespace QBankingSystemv2._0.Forms
 
         public void RefreshAccountList()
         {
-            userAccounts = AccountManager.GetUserAccounts(CurrentUser.UserID);
+            userAccounts = AccountManager.GetUserAccounts(User.UserID);
             BankAccounts.Items.Clear();
             foreach (IAccount account in userAccounts)
             {
-                BankAccounts.Items.Add(account.AccountName+"-   -"+account.AccountID);
+                BankAccounts.Items.Add(account.AccountName + "-   -" + account.AccountID);
             }
         }
 

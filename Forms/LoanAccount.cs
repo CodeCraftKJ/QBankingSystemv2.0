@@ -1,33 +1,46 @@
-﻿using System;
+﻿using QBankingSystemv2._0.Models.Loan.Loan;
+using System;
 using System.Windows.Forms;
-using QBankingSystemv2._0.Classes.DatabaseManager;
+using FluentValidation.Results;
+using System.Configuration;
 
 namespace QBankingSystemv2._0.Forms
 {
     public partial class LoanAccount : Form
     {
+        private LoanValidator loanValidator;
+
         public LoanAccount()
         {
             InitializeComponent();
-            LoanDatabaseManager.Initialize(CurrentUser.UserID);
+            LoanDatabaseManager.Initialize(User.UserID);
             RefreshLoanList();
+            loanValidator = new LoanValidator();
         }
 
         private void takeLoanButton_Click(object sender, EventArgs e)
         {
-            string toAccount = toAccount1.Text;
-            decimal loanAmount = loanAmountTrackBar.Value;
-            decimal loanInterestRate = loanInterestRateTrackBar.Value;
-            string currency = TxtBoxCurrency.Text;
+            var loanInput = new LoanInput
+            {
+                ToAccount = toAccount1.Text,
+                LoanAmount = loanAmountTrackBar.Value,
+                LoanInterestRate = loanInterestRateTrackBar.Value,
+                Currency = TxtBoxCurrency.Text
+            };
 
-            try
+            ValidationResult result = loanValidator.ValidateAndShowMessage(toAccount1, loanInput);
+
+            if (result.IsValid)
             {
-                LoanDatabaseManager.TakeLoan(toAccount, loanAmount, loanInterestRate, currency);
-                RefreshLoanList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Transaction Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    LoanDatabaseManager.TakeLoan(loanInput.ToAccount, loanInput.LoanAmount, loanInput.LoanInterestRate, loanInput.Currency);
+                    RefreshLoanList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Transaction Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

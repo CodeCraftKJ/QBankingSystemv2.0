@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
-using QBankingSystemv2._0.ValidationClasses;
+using QBankingSystemv2._0.Models.Account.Account;
+using QBankingSystemv2._0.Models.Account.AccountDB;
 using System;
 using System.Windows.Forms;
 
@@ -81,7 +82,7 @@ namespace QBankingSystemv2._0.Forms
                 decimal depositLimit = decimal.Parse(depositLimitTextBox.Text);
                 decimal withdrawalLimit = decimal.Parse(withdrawalLimitTextBox.Text);
                 decimal transferLimit = decimal.Parse(transferLimitTextBox.Text);
-                int userID = CurrentUser.UserID;
+                int userID = User.UserID;
                 AccountRegistrationManager.RegisterAccount(accountName, accountType, currency, initialBalance,
                                                            depositLimit, withdrawalLimit, transferLimit, userID);
 

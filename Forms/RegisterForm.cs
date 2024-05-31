@@ -1,7 +1,7 @@
-﻿using System;
+﻿using QBankingSystemv2._0.Classes.DatabaseManager;
+using QBankingSystemv2._0.Models.User.UserValidation;
+using System;
 using System.Windows.Forms;
-using QBankingSystemv2._0.Classes.DatabaseManager;
-using QBankingSystemv2._0.ValidationClasses;
 
 namespace QBankingSystemv2._0.Forms
 {
@@ -76,7 +76,7 @@ namespace QBankingSystemv2._0.Forms
         {
             if (!RegistrationManager.InitializeAndRun(textPIN, textPesel, textPhone, textLastName, textFirstName, textUserName,
                      textRepeatPassword, textBoxPassword, textMatrialStatus, textAddress,
-                     textBirth, textEmail))return;
+                     textBirth, textEmail)) return;
             WelcomeForm welcomeForm = new();
             welcomeForm.Activated += (sender, e) => this.Hide();
             welcomeForm.ShowDialog();

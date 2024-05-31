@@ -1,10 +1,9 @@
-﻿using System;
+﻿using QBankingSystemv2._0.Models.Account.Account;
+using QBankingSystemv2._0.Models.Transfer.Transfer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using QBankingSystemv2._0.Classes.DatabaseManager;
-using QBankingSystemv2._0.Classes.Transactions;
-using QBankingSystemv2._0.Interfaces;
 
 namespace QBankingSystemv2._0.Forms
 {
@@ -114,7 +113,7 @@ namespace QBankingSystemv2._0.Forms
                         string description = parts[3].Split(':')[1].Trim();
 
                         Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, "Transfer", amount, description, DateTime.Now);
-                        TransactionManager.ExecuteTransaction(transaction, CurrentUser.UserID);
+                        TransactionManager.ExecuteTransaction(transaction, User.UserID);
                     }
                     LoadTransfers();
                 }

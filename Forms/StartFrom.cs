@@ -1,4 +1,4 @@
-﻿using QBankingSystemv2._0.Classes.DatabaseManager;
+﻿using QBankingSystemv2._0.Configuration;
 using QBankingSystemv2._0.Forms;
 using System;
 using System.Windows.Forms;

@@ -1,7 +1,5 @@
 ﻿using FluentValidation.Results;
-using QBankingSystemv2._0.Classes.Transactions;
-using QBankingSystemv2._0.Classes.DatabaseManager;
-using QBankingSystemv2._0.ValidationClasses;
+using QBankingSystemv2._0.Models.Transfer.Transfer;
 using System;
 using System.Windows.Forms;
 
@@ -52,12 +50,12 @@ namespace QBankingSystemv2._0.Forms
 
                 try
                 {
-                    TransactionManager.ExecuteTransaction(transaction, CurrentUser.UserID);
+                    TransactionManager.ExecuteTransaction(transaction, User.UserID);
                     MessageBox.Show("Transfer Executed Successfully!.");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error:."+ ex.Message);
+                    MessageBox.Show("Error:." + ex.Message);
                 }
 
             }
