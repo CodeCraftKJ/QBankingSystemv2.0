@@ -2,7 +2,7 @@
 
 namespace QBankingSystemv2._0.Models.Transfer.Transfer
 {
-    public class Transaction
+    public class Transfer
     {
         public string TransactionID { get; private set; }
         public string SourceAccountID { get; private set; }
@@ -12,7 +12,7 @@ namespace QBankingSystemv2._0.Models.Transfer.Transfer
         public DateTime TransactionDate { get; private set; }
         public string Description { get; private set; }
 
-        public Transaction(string sourceAccountID, string destinationAccountID, string transactionType, decimal amount, string description, DateTime date)
+        public Transfer(string sourceAccountID, string destinationAccountID, string transactionType, decimal amount, string description, DateTime date)
         {
             TransactionID = GenerateTransactionID().ToString();
             SourceAccountID = sourceAccountID;

@@ -17,7 +17,7 @@ namespace QBankingSystemv2._0.Models.Loan.Loan
                 {
                     int loanAccountID = CreateLoanAccount(connection, transaction, currency, loanAmount);
                     CreateNewLoan(connection, transaction, loanAccountID, loanAmount, loanInterestRate);
-                    TransactionManager.ExecuteTransaction(new Transaction(loanAccountID.ToString(), toAccount, "Loan", loanAmount, "Loan taken", DateTime.Now), userID);
+                    TransferManager.ExecuteTransaction(new Transfer.Transfer.Transfer(loanAccountID.ToString(), toAccount, "Loan", loanAmount, "Loan taken", DateTime.Now), userID);
                     transaction.Commit();
                 }
                 catch (Exception ex)

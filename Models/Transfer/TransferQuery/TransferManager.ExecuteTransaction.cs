@@ -3,9 +3,9 @@ using System.Data.SqlClient;
 
 namespace QBankingSystemv2._0.Models.Transfer.Transfer
 {
-    public static partial class TransactionManager
+    public static partial class TransferManager
     {
-        public static void ExecuteTransaction(Transaction transaction, int userID)
+        public static void ExecuteTransaction(Transfer transaction, int userID)
         {
             string connectionString = ConfigurationManager.GetConnectionString();
 

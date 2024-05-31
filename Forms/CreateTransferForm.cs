@@ -46,11 +46,11 @@ namespace QBankingSystemv2._0.Forms
                 decimal amount = decimal.Parse(amountTextBox.Text);
                 string description = descriptionTextBox.Text;
 
-                Transaction transaction = new(sourceAccountID, destinationAccountID, transactionType, amount, description, DateTime.Now);
+                Transfer transaction = new(sourceAccountID, destinationAccountID, transactionType, amount, description, DateTime.Now);
 
                 try
                 {
-                    TransactionManager.ExecuteTransaction(transaction, User.UserID);
+                    TransferManager.ExecuteTransaction(transaction, User.UserID);
                     MessageBox.Show("Transfer Executed Successfully!.");
                 }
                 catch (Exception ex)

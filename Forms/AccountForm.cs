@@ -10,7 +10,7 @@ namespace QBankingSystemv2._0.Forms
     public partial class Account : Form
     {
         private IAccount _account;
-        private List<(Transaction, bool)> _accountTransfers;
+        private List<(Transfer, bool)> _accountTransfers;
 
         public Account(IAccount account)
         {
@@ -24,14 +24,14 @@ namespace QBankingSystemv2._0.Forms
         private void LoadTransfers()
         {
             TransfersList.Items.Clear();
-            _accountTransfers = TransactionManager.GetAccountTransfers(_account.AccountID);
+            _accountTransfers = TransferManager.GetAccountTransfers(_account.AccountID);
             if (_accountTransfers != null && _accountTransfers.Count > 0)
             {
                 decimal totalBalance = 0;
 
                 foreach (var transferTuple in _accountTransfers)
                 {
-                    Transaction transaction = transferTuple.Item1;
+                    Transfer transaction = transferTuple.Item1;
                     bool isOutgoing = transferTuple.Item2;
                     decimal amount = isOutgoing ? -transaction.Amount : transaction.Amount;
                     totalBalance += amount;
@@ -70,7 +70,7 @@ namespace QBankingSystemv2._0.Forms
                 {
                     foreach (var transferTuple in _accountTransfers)
                     {
-                        Transaction transaction = transferTuple.Item1;
+                        Transfer transaction = transferTuple.Item1;
                         bool isOutgoing = transferTuple.Item2;
                         string transferType = isOutgoing ? "OUTGOING" : "INCOMING";
                         string transferDirection = isOutgoing ? "TO: " : "FROM: ";
@@ -112,8 +112,8 @@ namespace QBankingSystemv2._0.Forms
                         decimal amount = decimal.Parse(parts[2].Split(':')[1].Trim());
                         string description = parts[3].Split(':')[1].Trim();
 
-                        Transaction transaction = new Transaction(sourceAccountID, destinationAccountID, "Transfer", amount, description, DateTime.Now);
-                        TransactionManager.ExecuteTransaction(transaction, User.UserID);
+                        Transfer transaction = new Transfer(sourceAccountID, destinationAccountID, "Transfer", amount, description, DateTime.Now);
+                        TransferManager.ExecuteTransaction(transaction, User.UserID);
                     }
                     LoadTransfers();
                 }

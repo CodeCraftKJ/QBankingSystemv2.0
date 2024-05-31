@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 
 namespace QBankingSystemv2._0.Models.Transfer.Transfer
 {
-    public static partial class TransactionManager
+    public static partial class TransferManager
     {
-        public static List<(Transaction, bool)> GetAccountTransfers(string accountID)
+        public static List<(Transfer, bool)> GetAccountTransfers(string accountID)
         {
-            List<(Transaction, bool)> accountTransfers = new List<(Transaction, bool)>();
+            List<(Transfer, bool)> accountTransfers = new List<(Transfer, bool)>();
 
             string connectionString = ConfigurationManager.GetConnectionString();
 
@@ -30,7 +30,7 @@ namespace QBankingSystemv2._0.Models.Transfer.Transfer
                         string destinationAccountID = reader["DestinationAccountID"].ToString();
 
                         bool isOutgoing = sourceAccountID == accountID;
-                        Transaction transaction = new Transaction(
+                        Transfer transaction = new Transfer(
                             sourceAccountID,
                             destinationAccountID,
                             reader["TransactionType"].ToString(),

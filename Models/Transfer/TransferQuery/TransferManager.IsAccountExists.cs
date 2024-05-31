@@ -2,7 +2,7 @@
 
 namespace QBankingSystemv2._0.Models.Transfer.Transfer
 {
-    public static partial class TransactionManager
+    public static partial class TransferManager
     {
         private static bool IsAccountExists(SqlConnection connection, string accountID)
         {
