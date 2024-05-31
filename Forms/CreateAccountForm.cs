@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
-using QBankingSystemv2._0.Models.Account.Account;
 using QBankingSystemv2._0.Models.Account.AccountDB;
+using QBankingSystemv2._0.Models.Account.AccountValidation;
 using System;
 using System.Windows.Forms;
 

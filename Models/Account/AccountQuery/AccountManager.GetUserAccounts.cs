@@ -1,9 +1,10 @@
-﻿using QBankingSystemv2._0.Models.Account.Account.AccountTypes;
+﻿using QBankingSystemv2._0.Models.Account.Account;
+using QBankingSystemv2._0.Models.Account.Account.AccountTypes;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace QBankingSystemv2._0.Models.Account.Account
+namespace QBankingSystemv2._0.Models.Account.AccountQuery
 {
     public static class AccountManager
     {

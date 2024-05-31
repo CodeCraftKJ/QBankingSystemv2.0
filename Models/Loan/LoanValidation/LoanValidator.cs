@@ -2,7 +2,7 @@
 using FluentValidation.Results;
 using System.Windows.Forms;
 
-namespace QBankingSystemv2._0.Models.Loan.Loan
+namespace QBankingSystemv2._0.Models.Loan.LoanValidation
 {
     public class LoanValidator : AbstractValidator<LoanInput>
     {

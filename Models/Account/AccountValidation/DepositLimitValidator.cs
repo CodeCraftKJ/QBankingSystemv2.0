@@ -2,7 +2,7 @@
 using FluentValidation.Results;
 using System.Windows.Forms;
 
-namespace QBankingSystemv2._0.Models.Account.Account
+namespace QBankingSystemv2._0.Models.Account.AccountValidation
 {
     public class DepositLimitValidator : AbstractValidator<decimal>
     {

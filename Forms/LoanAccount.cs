@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using FluentValidation.Results;
 using System.Configuration;
+using QBankingSystemv2._0.Models.Loan.LoanValidation;
 
 namespace QBankingSystemv2._0.Forms
 {

@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using QBankingSystemv2._0.Models.Transfer.Transfer;
+using QBankingSystemv2._0.Models.Transfer.TransferValidation;
 using System;
 using System.Windows.Forms;
 

@@ -1,5 +1,5 @@
 ﻿using System.Data.SqlClient;
-namespace QBankingSystemv2._0.Models.User.User
+namespace QBankingSystemv2._0.Models.User.UserQuery
 {
     static class LoginManager
     {

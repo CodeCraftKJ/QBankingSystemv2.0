@@ -2,7 +2,7 @@
 using FluentValidation.Results;
 using System.Windows.Forms;
 
-namespace QBankingSystemv2._0.Models.Transfer.Transfer
+namespace QBankingSystemv2._0.Models.Transfer.TransferValidation
 {
     public class DestinationAccountValidator : AbstractValidator<string>
     {
