@@ -23,6 +23,7 @@ namespace QBankingSystemv2._0.Forms
 
         private void LoadTransfers()
         {
+
             TransfersList.Items.Clear();
             _accountTransfers = TransferManager.GetAccountTransfers(_account.AccountID);
             if (_accountTransfers != null && _accountTransfers.Count > 0)

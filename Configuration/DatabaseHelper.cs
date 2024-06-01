@@ -37,11 +37,11 @@ namespace QBankingSystemv2._0.Configuration
 
                 return (true, DatabaseError.None);
             }
-            catch (SqlException ex) when (ex.Number == -2)
+            catch (SqlException ex) when (ex.Number == 40613)
             {
                 return (false, DatabaseError.ConnectionError);
             }
-            catch (SqlException ex) when (ex.Number == 18456)
+            catch (SqlException ex) when (ex.Number == 40615)
             {
                 return (false, DatabaseError.IPPermissionError);
             }

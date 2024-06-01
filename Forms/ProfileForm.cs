@@ -97,7 +97,7 @@ namespace QBankingSystemv2._0.Forms
             {
                 BankAccounts.Items.Add(account.AccountName + "-   -" + account.AccountID);
             }
-        }
 
+        }
     }
 }
