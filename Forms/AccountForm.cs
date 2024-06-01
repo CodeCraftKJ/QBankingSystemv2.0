@@ -134,6 +134,7 @@ namespace QBankingSystemv2._0.Forms
         private void LoansBtn_Click(object sender, EventArgs e)
         {
             LoanAccount loanAccountForm = new LoanAccount();
+            loanAccountForm.FormClosed += (s, args) => LoadTransfers();
             loanAccountForm.Show();
         }
 

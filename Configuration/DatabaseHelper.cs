@@ -6,7 +6,16 @@ namespace QBankingSystemv2._0.Configuration
 {
     public static class DatabaseHelper
     {
-        public static async Task<bool> IsDatabaseReadyAsync()
+        public enum DatabaseError
+        {
+            None,
+            ConnectionError,
+            StructureError,
+            IPPermissionError,
+            UnknownError
+        }
+
+        public static async Task<(bool, DatabaseError)> IsDatabaseReadyAsync()
         {
             string connectionString = ConfigurationManager.GetConnectionString();
             string[] requiredTables = { "QPayUsers", "QPayHarshedPasswords", "QPayLogTable", "QPayLoans", "QPayTransactions", "QPayAccounts" };
@@ -14,6 +23,7 @@ namespace QBankingSystemv2._0.Configuration
             {
                 using SqlConnection connection = new(connectionString);
                 await connection.OpenAsync();
+
                 foreach (string tableName in requiredTables)
                 {
                     string query = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{tableName}'";
@@ -21,15 +31,23 @@ namespace QBankingSystemv2._0.Configuration
                     int count = (int)await command.ExecuteScalarAsync();
                     if (count == 0)
                     {
-                        return false;
+                        return (false, DatabaseError.StructureError);
                     }
                 }
 
-                return true;
+                return (true, DatabaseError.None);
+            }
+            catch (SqlException ex) when (ex.Number == -2)
+            {
+                return (false, DatabaseError.ConnectionError);
+            }
+            catch (SqlException ex) when (ex.Number == 18456)
+            {
+                return (false, DatabaseError.IPPermissionError);
             }
             catch (Exception)
             {
-                return false;
+                return (false, DatabaseError.UnknownError);
             }
         }
     }

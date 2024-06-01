@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 
-namespace QBankingSystemv2._0.Models.User.UserQuery
+namespace QBankingSystemv2._0.Models.User.UserQuery.Login
 {
     public static class UserDataManager
     {

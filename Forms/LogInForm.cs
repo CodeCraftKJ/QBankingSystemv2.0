@@ -1,5 +1,5 @@
 ﻿using QBankingSystemv2._0.Classes.DatabaseManager;
-using QBankingSystemv2._0.Models.User.UserQuery;
+using QBankingSystemv2._0.Models.User.UserQuery.Login;
 using QBankingSystemv2._0.Models.User.UserValidation;
 using System;
 using System.Windows.Forms;

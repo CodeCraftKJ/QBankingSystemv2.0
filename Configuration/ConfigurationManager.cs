@@ -24,9 +24,15 @@ public static class ConfigurationManager
             JObject jsonObj = JObject.Parse(jsonContent);
             _connectionString = (string)jsonObj["ConnectionStrings"]["MainDatabaseConnection"];
         }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("FileNotFound: The appsettings.json file was not found.");
+            throw;
+        }
         catch (Exception ex)
         {
             Console.WriteLine("JSONFormatError: " + ex.Message);
+            throw;
         }
     }
 }

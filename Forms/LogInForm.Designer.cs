@@ -30,216 +30,202 @@ namespace QBankingSystemv2._0.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxWelcome = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.logInButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWelcome)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.SuspendLayout();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBoxWelcome = new System.Windows.Forms.PictureBox();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            txtUsername = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            txtPassword = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            logInButton = new System.Windows.Forms.Button();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWelcome).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::QBankingSystemv2._0.Properties.Resources.forest2;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1061, 612);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox1.Image = Properties.Resources.forest2;
+            pictureBox1.Location = new System.Drawing.Point(-4, -2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(1061, 612);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // pictureBoxWelcome
             // 
-            this.pictureBoxWelcome.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxWelcome.Image = global::QBankingSystemv2._0.Properties.Resources.qpaylogo;
-            this.pictureBoxWelcome.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxWelcome.Name = "pictureBoxWelcome";
-            this.pictureBoxWelcome.Size = new System.Drawing.Size(208, 599);
-            this.pictureBoxWelcome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxWelcome.TabIndex = 6;
-            this.pictureBoxWelcome.TabStop = false;
+            pictureBoxWelcome.Dock = System.Windows.Forms.DockStyle.Left;
+            pictureBoxWelcome.Image = Properties.Resources.qpaylogo;
+            pictureBoxWelcome.Location = new System.Drawing.Point(0, 0);
+            pictureBoxWelcome.Name = "pictureBoxWelcome";
+            pictureBoxWelcome.Size = new System.Drawing.Size(208, 599);
+            pictureBoxWelcome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBoxWelcome.TabIndex = 6;
+            pictureBoxWelcome.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.txtUsername);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.logInButton);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Location = new System.Drawing.Point(270, 22);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(728, 552);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
+            groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            groupBox1.Controls.Add(txtUsername);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txtPassword);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(logInButton);
+            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Controls.Add(pictureBox3);
+            groupBox1.Location = new System.Drawing.Point(270, 22);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(728, 552);
+            groupBox1.TabIndex = 7;
+            groupBox1.TabStop = false;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(94, 252);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(529, 27);
-            this.txtUsername.TabIndex = 15;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            txtUsername.Location = new System.Drawing.Point(94, 252);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new System.Drawing.Size(529, 27);
+            txtUsername.TabIndex = 15;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 11.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label2.Location = new System.Drawing.Point(94, 307);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 26);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Password";
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Palatino Linotype", 11.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label2.ForeColor = System.Drawing.Color.DarkGreen;
+            label2.Location = new System.Drawing.Point(94, 307);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(96, 26);
+            label2.TabIndex = 14;
+            label2.Text = "Password";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(94, 346);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(529, 27);
-            this.txtPassword.TabIndex = 13;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            txtPassword.Location = new System.Drawing.Point(94, 346);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new System.Drawing.Size(529, 27);
+            txtPassword.TabIndex = 13;
+            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 30.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(94, 23);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 69);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Welcome to";
+            label3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Palatino Linotype", 30.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label3.ForeColor = System.Drawing.Color.DarkGreen;
+            label3.Location = new System.Drawing.Point(94, 23);
+            label3.Margin = new System.Windows.Forms.Padding(0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(301, 69);
+            label3.TabIndex = 4;
+            label3.Text = "Welcome to";
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.CausesValidation = false;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(244, 528);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(241, 18);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Don\'t have account yet? Register Now!";
-            this.label5.Click += new System.EventHandler(this.openRegisterAccount);
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.CausesValidation = false;
+            label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            label5.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label5.ForeColor = System.Drawing.Color.Black;
+            label5.Location = new System.Drawing.Point(244, 528);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(241, 18);
+            label5.TabIndex = 9;
+            label5.Text = "Don't have account yet? Register Now!";
+            label5.Click += openRegisterAccount;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 8.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.label4.Location = new System.Drawing.Point(-898, 397);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 19);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Don\'t have an account yet?";
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Palatino Linotype", 8.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label4.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
+            label4.Location = new System.Drawing.Point(-898, 397);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(185, 19);
+            label4.TabIndex = 8;
+            label4.Text = "Don't have an account yet?";
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 11.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(94, 213);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 26);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Username";
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Palatino Linotype", 11.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.DarkGreen;
+            label1.Location = new System.Drawing.Point(94, 213);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(103, 26);
+            label1.TabIndex = 6;
+            label1.Text = "Username";
             // 
             // logInButton
             // 
-            this.logInButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.logInButton.BackColor = System.Drawing.Color.MintCream;
-            this.logInButton.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logInButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.logInButton.Location = new System.Drawing.Point(66, 431);
-            this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(605, 94);
-            this.logInButton.TabIndex = 1;
-            this.logInButton.Text = "LOG IN";
-            this.logInButton.UseVisualStyleBackColor = false;
-            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
+            logInButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            logInButton.BackColor = System.Drawing.Color.MintCream;
+            logInButton.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            logInButton.ForeColor = System.Drawing.Color.ForestGreen;
+            logInButton.Location = new System.Drawing.Point(66, 431);
+            logInButton.Name = "logInButton";
+            logInButton.Size = new System.Drawing.Size(605, 94);
+            logInButton.TabIndex = 1;
+            logInButton.Text = "LOG IN";
+            logInButton.UseVisualStyleBackColor = false;
+            logInButton.Click += logInButton_Click;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::QBankingSystemv2._0.Properties.Resources.qpaylogo;
-            this.pictureBox2.Location = new System.Drawing.Point(306, -22);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(304, 202);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Resources.qpaylogo;
+            pictureBox2.Location = new System.Drawing.Point(306, -22);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(304, 202);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::QBankingSystemv2._0.Properties.Resources.login;
-            this.pictureBox3.Location = new System.Drawing.Point(441, 184);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(281, 251);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = Properties.Resources.login;
+            pictureBox3.Location = new System.Drawing.Point(441, 184);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(281, 251);
+            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 12;
+            pictureBox3.TabStop = false;
             // 
             // LogInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1049, 599);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBoxWelcome);
-            this.Controls.Add(this.pictureBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "LogInForm";
-            this.Text = "QPayApp Log In";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWelcome)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(1049, 599);
+            Controls.Add(groupBox1);
+            Controls.Add(pictureBoxWelcome);
+            Controls.Add(pictureBox1);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "LogInForm";
+            Text = "QPayApp Log In";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWelcome).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
